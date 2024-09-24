@@ -1,0 +1,133 @@
+- type: entity
+  parent: SheetSteel
+  id: SheetSteelmnoga
+  name: steel
+  suffix: 999
+  components:
+  - type: Sprite
+    state: steel
+  - type: Stack
+    stackType: Steel
+    count: 10000
+
+- type: entity
+  parent: SheetGlass
+  id: SheetGlassmnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: glass
+  - type: Stack
+    stackType: Glass
+    count: 10000
+
+- type: entity
+  parent: SheetPlasma
+  id: SheetPlasmamnoga
+  name: plasma
+  suffix: 999
+  components:
+  - type: Sprite
+    state: plasma
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: SheetPlastic
+  id: SheetPlasticmnoga
+  name: plastic
+  suffix: 999
+  components:
+  - type: Sprite
+    state: plastic
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: SheetUranium
+  id: SheetUraniummnoga
+  name: uranium
+  suffix: 999
+  components:
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: IngotGold
+  id: IngotGoldmnoga
+  name: gold bar
+  suffix: 999
+  components:
+  - type: Sprite
+    state: gold
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: IngotSilver
+  id: IngotSilvermnoga
+  name: silver bar
+  suffix: 999
+  components:
+  - type: Sprite
+    state: silver
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialCardboard
+  id: MaterialCardboardmnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: cardboard
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialCloth
+  id: MaterialClothmnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: cloth
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialWoodPlank
+  id: MaterialWoodPlankmnoga
+  suffix: 999
+  components:
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialCotton
+  id: MaterialCottonmnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: cotton
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialPyrotton
+  id: MaterialPyrottonmnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: pyrotton
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: MaterialBananium
+  id: MaterialBananiummnoga
+  suffix: 999
+  components:
+  - type: Sprite
+    state: bananium
+  - type: Stack
+    count: 10000

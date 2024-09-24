@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseLightTube
+  name: Light CrystalGreen
+  id: LightTubeCrygr
+  description: A light fixture.
+  components:
+  - type: LightBulb
+    color: "#004c54"
+    lightEnergy: 8
+    lightRadius: 12
+    lightSoftness: 1
+    PowerUse: 25
+
+- type: entity
+  parent: BaseLightTube
+  name: LightOrj
+  id: LightTubeOrjmk
+  description: A light fixture.
+  components:
+  - type: LightBulb
+    color: "#FF8F00"
+    lightEnergy: 0.5
+    lightRadius: 10
+    lightSoftness: 1
+    PowerUse: 25

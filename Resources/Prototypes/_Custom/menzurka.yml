@@ -1,0 +1,34 @@
+- type: entity
+  name: Мензурка
+  parent: BaseBeaker
+  description: Увы.
+  id: SuperbBeaker
+  components:
+  - type: Spillable
+    solution: beaker
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    layers:
+      - state: beakerlarge
+      - state: beakerlarge1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    size: Tiny
+    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 5000000
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: beakerlarge
+    inHandsMaxFillLevels: 4
+    inHandsFillBaseName: -fill-
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 100
+  - type: Tag
+    tags:
+    - Bottle

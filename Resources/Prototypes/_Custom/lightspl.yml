@@ -1,0 +1,25 @@
+- type: entity
+  id: LightPlqCyrstalBlue
+  suffix: CyrstalBlue
+  parent: Poweredlight
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightTubeCrygr
+  - type: PointLight
+    radius: 12
+    energy: 8
+    softness: 1
+    color: "#004c54"
+
+- type: entity
+  id: LightPlqOrangeM
+  suffix: OrangeM
+  parent: Poweredlight
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightTubeOrjmk
+  - type: PointLight
+    radius: 10
+    energy: 0.5
+    softness: 1
+    color: "#39ff14"

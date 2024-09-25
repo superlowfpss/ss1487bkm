@@ -1,0 +1,110 @@
+﻿[game]
+hostname = "ss1487"
+maxplayers = 20
+soft_max_players = 10
+desc="""
+Тут типо смешное описание хахахах
+"""
+map_pool="BackmenDefaultMapPool"
+defaultpreset="secret"
+lobbyenabled = true
+cryo_sleep_rejoining = true
+lobbyduration=300
+contraband_examine = false
+
+[shuttle]
+arrivals = true
+#arrivals_map = "/Maps/Misc/kosmoport.yml"
+#arrivals_map = "/Maps/Backmen/Etc/terminal.yml"
+#arrivals_map = "/Maps/Misc/terminal.yml"
+arrivals_returns = true
+auto_call_time = 150
+auto_call_extension_time = 70
+emergency_dock_time = 280
+emergency_authorize_time = 30
+emergency_early_launch_allowed = true
+#arrivals_planet = false
+
+[salvage]
+expedition_cooldown = 300
+
+[ic]
+restricted_names = true
+flavor_text = true
+
+[ooc]
+show_ooc_patron_color = false
+
+[looc]
+enabled_crit = true
+
+[biomass]
+easy_mode = false
+
+[atmos]
+space_wind = false
+space_wind_max_velocity = 22.0
+#tickrate = 7
+monstermos_rip_tiles = true
+
+[physics]
+target_minimum_tickrate = 20
+timetosleep = 0.1
+angsleeptol = 0.01
+linsleeptol = 0.001
+
+[update]
+restart_delay = 120
+
+[worldgen]
+enabled = true
+
+[ahelp]
+admin_prefix = true
+admin_prefix_webhook = true
+
+[viewport]
+maximum_width = 26
+
+[rules]
+time = 30
+
+[afk]
+time = 9999999.0
+#time=1200.0
+
+[admin]
+announce_login = false
+announce_logout = false
+see_own_notes = true
+new_player_threshold = 600
+alert.min_players_sharing_connection = 2
+
+[adminlogs]
+server_name="main"
+
+[events]
+enabled=true
+
+[server]
+rules_file="RulesBackmen"
+
+[net]
+max_connections = 1024
+tickrate = 20
+port = 1212
+bindto = "::,0.0.0.0"
+log_late_msg=false
+# Automatic port forwarding!
+# Disabled by default because you may not want to do this.
+upnp = true
+sendbuffersize=2471071
+#receivebuffersize=1471071
+lidgren_log_warning = false
+lidgren_log_error = false
+
+[netres]
+limit = 2.0
+
+[queue]
+enabled=true

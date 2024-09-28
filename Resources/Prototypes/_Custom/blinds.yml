@@ -35,8 +35,6 @@
   - type: Occluder
     enabled: false
   - type: Appearance
-  - type: InteractionRange
-    range: 2.25
   - type: GenericVisualizer
     visuals:
       enum.BlindsVisualState.State:

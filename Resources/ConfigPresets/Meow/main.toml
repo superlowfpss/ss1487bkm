@@ -40,11 +40,11 @@ enabled = true
 # connectaddress = "udp://localhost:1212"
 
 [game]
-hostname = "ss1487"
-maxplayers = 20
-soft_max_players = 10
+hostname = "[RU] [MRP] Космический рубеж 🌠"
+maxplayers = 30
+soft_max_players = 20
 desc="""
-Тут типо смешное описание хахахах
+🌠 Космический рубеж - сервер со средним уровнем отыгрыша, адекватной администрацией и прекрасной сборкой! Присоединяйся и испытай новые приключения с нами! 💫
 """
 map_pool="BackmenDefaultMapPool"
 defaultpreset="secret"
@@ -52,7 +52,7 @@ lobbyenabled = true
 cryo_sleep_rejoining = true
 lobbyduration=360
 contraband_examine = false
-role_timers = false
+role_timers = true
 map_rotation = true
 
 [shuttle]
@@ -82,7 +82,7 @@ enabled_crit = true
 easy_mode = false
 
 [atmos]
-space_wind = false
+space_wind = true
 space_wind_max_velocity = 22.0
 #tickrate = 7
 
@@ -106,7 +106,7 @@ admin_prefix_webhook = true
 maximum_width = 26
 
 [rules]
-time = 0.1
+time = 120
 
 [afk]
 time = 9999999.0
@@ -182,7 +182,7 @@ hub_urls = "https://hub.spacestation14.com/"
 # Authentication (accounts):
 # 0 = Optional, 1 = Required, 2 = Disabled
 # Presumably do require authentication on any public server.
-# mode = 0
+# mode = 1
 
 # If true, even if authentication is required, localhost is still allowed to login directly regardless.
 # allowlocal = true

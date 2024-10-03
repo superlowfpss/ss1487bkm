@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelSyndicate
-  name: Сумка Синдиката
-  description: Облегчённая сумка для настоящих боевых агентов.
+  name: syndie satchel
+  description: Lightweight bag for combat agents.
   components:
   - type: Sprite
     sprite: _Custom/syndiesatchel.rsi

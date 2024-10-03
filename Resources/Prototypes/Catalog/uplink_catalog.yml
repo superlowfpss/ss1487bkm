@@ -1652,6 +1652,19 @@
  # Pointless
 
 - type: listing
+  id: UplinkSatchelSyndicate
+  name: uplink-satchel-syndicate-name
+  description: uplink-satchel-syndicate-desc
+  productEntity: ClothingBackpackSatchelSyndicate
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+
+ # Pointless
+
+
+- type: listing
   id: UplinkBarberScissors
   name: uplink-barber-scissors-name
   description: uplink-barber-scissors-desc

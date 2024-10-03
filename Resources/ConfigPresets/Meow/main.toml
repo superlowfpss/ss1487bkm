@@ -1,4 +1,4 @@
-﻿# Welcome to the example configuration file!
+# Welcome to the example configuration file!
 # Remember that if this is in bin/Content.Server or such, it may be overwritten on build.
 # Consider copying it and using the --config-file and --data-dir options.
 
@@ -191,3 +191,7 @@ hub_urls = "https://hub.spacestation14.com/"
 # (the auth server being the one which manages Space Station 14 accounts), you change it here.
 # server = https://auth.spacestation14.com/
 
+[discord]
+round_update_webhook = "https://discord.com/api/webhooks/1291421199666253875/xqMzdqEm3RApZTQoeXt_oRWT5ExiFnHDLvYi9TQ7-94OrTI4Pt_R_t3dnbatnDuZphwS"
+ahelp_webhook = "https://discord.com/api/webhooks/1291100850072326277/Cki9bxA7nvEJHUOH_8rEfi3FpbAOK7CfLWgPiEOuSS92LjhPltf55JM6ErDkz9NiIg8o"
+vote_webhook = "https://discord.com/api/webhooks/1291100850072326277/Cki9bxA7nvEJHUOH_8rEfi3FpbAOK7CfLWgPiEOuSS92LjhPltf55JM6ErDkz9NiIg8o"

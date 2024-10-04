@@ -55,6 +55,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
+    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -2129,7 +2130,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -4.5,4.5
       parent: 2
-- proto: AirlockExternalGlassAtmosphericsLocked
+- proto: AirlockExternal
   entities:
   - uid: 23
     components:
@@ -2160,14 +2161,6 @@ entities:
     - type: Transform
       pos: 11.5,-26.5
       parent: 2
-    - type: ContainerFill
-      containers:
-        board:
-        - DoorElectronicsCentralCommand
-    missingComponents:
-    - RCDDeconstructable
-    - Damageable
-    - Destructible
   - uid: 28
     components:
     - type: Transform
@@ -2266,7 +2259,6 @@ entities:
   - uid: 36
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 11.5,-12.5
       parent: 2
   - uid: 37

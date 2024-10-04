@@ -10,13 +10,13 @@ enabled = false
 
 [net]
 max_connections = 1024
-tickrate = 30
+tickrate = 40
 port = 1212
 bindto = "::,0.0.0.0"
 log_late_msg=false
 # Automatic port forwarding!
 # Disabled by default because you may not want to do this.
-upnp = true
+# upnp = true
 sendbuffersize=2471071
 #receivebuffersize=1471071
 lidgren_log_warning = false

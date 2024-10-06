@@ -1,0 +1,22 @@
+- type: gameMap
+  id: DevMapSpace
+  mapName: DevSpace
+  mapPath: Maps/_Custom/dev_map_space.yml
+  minPlayers: 0
+  stations:
+    Dev:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Dev"
+        - type: StationJobs
+          availableJobs:
+            Captain: [ -1, -1 ]
+            Blueshield: [ -1, -1 ]
+        # backmen blob-config-start DEBUG
+        - type: StationBlobConfig
+          stageBegin: 20
+          stageCritical: 50
+          stageTheEnd: 100
+          specForceTeam: RXBZZBlobBig
+        # backmen blob-config-end

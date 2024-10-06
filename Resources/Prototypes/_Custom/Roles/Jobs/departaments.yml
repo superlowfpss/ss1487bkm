@@ -1,0 +1,10 @@
+- type: department
+  id: BShield
+  name: department-BShield
+  description: department-BShield-description
+  color: "#233D57"
+  weight: 10
+  roles:
+  - Blueshield # Space
+  accountNumber: 1323  #backmen: currency
+  primary: false

@@ -1,0 +1,525 @@
+- type: entity
+  name: БК
+  parent: BaseItem
+  id: ERTCrystal
+  suffix: 20 БК
+  components:
+  - type: Sprite
+    sprite: _Custom/sprite/telecrystal.rsi
+    state: telecrystal
+  - type: Item
+    sprite: _Сustom/sprite/telecrystal.rsi
+    size: Tiny
+  - type: Stack
+    count: 20
+    stackType: Telecrystal
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      ERTCrystal: 1
+
+- type: entity
+  parent: ERTCrystal
+  id: ERTCrystal1
+  name: БК
+  suffix: 1 БК
+  components:
+  - type: Stack
+    count: 1
+
+- type: currency
+  id: ERTCrystal
+  displayName: БК
+  cash:
+    1: ERTCrystal1
+  canWithdraw: true
+
+- type: entity
+  parent: BaseItem
+  id: BSuplink
+  name: Терминал снаряжения ОСЩ
+  suffix: Космический Рубеж
+  description: Терминал который использует офицеры синего щита для покупки снаряжения.
+  components:
+  - type: Item
+    size: Small
+    sprite: _Custom/Uplink.rsi
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Sprite
+    sprite: _Custom/Uplink.rsi
+    layers:
+    - state: old-radio
+  - type: Appearance
+  - type: StaticPrice
+    price: 100
+  - type: Store
+    categories:
+      - BSweapons
+      - BSammo
+      - BSnanit
+      - BSequip
+      - BSsouz
+      - BSBoom
+      - BSimp
+      - BSmoremore
+      - BSmore
+      - BSengi
+    currencyWhitelist:
+      - ERTCrystal
+    balance:
+      ERTCrystal: 20
+
+- type: storeCategory
+  id: BSweapons
+  name: Вооружение
+
+- type: storeCategory
+  id: BSmoremore
+  name: Безделушки
+
+- type: storeCategory
+  id: BSBoom
+  name: Взрывчатка
+
+- type: storeCategory
+  id: BSammo
+  name: Боеприпасы
+
+- type: storeCategory
+  id: BSnanit
+  name: Химикаты
+
+- type: storeCategory
+  id: BSmed
+  name: Медикаменты
+
+- type: storeCategory
+  id: BSmore
+  name: Разное
+
+- type: storeCategory
+  id: BSimp
+  name: Импланты
+
+- type: storeCategory
+  id: BSequip
+  name: Экипировка
+
+- type: storeCategory
+  id: BSsouz
+  name: Союзники
+
+- type: storeCategory
+  id: BSengi
+  name: Инструменты
+
+- type: listing
+  id: ClothingBeltSheathBSshop
+  name: Офицерская сабля
+  description: Личная церемониальная сабля для офицера синего щита.
+  productEntity: ClothingBeltSheathBS
+  cost:
+    ERTCrystal: 8
+  categories:
+  - BSweapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: WeaponPistolG23Shop
+  description: Небольшой служебный пистолет с фонарём на цевье. Производится на фабриках Nanotrasen.
+  productEntity: WeaponPistolG23
+  cost:
+    ERTCrystal: 4
+  categories:
+  - BSweapons
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: WeaponRevolverR44Shop
+  description: Брутальный, громкий, эффективный и неверотно простой револьвер, который используется на вооружении ОПЗ.
+  productEntity: WeaponRevolverR44
+  cost:
+    ERTCrystal: 6
+  categories:
+  - BSweapons
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: energygunShop
+  productEntity: WeaponX2DualphaseEnergyLaserGun
+  cost:
+    ERTCrystal: 8
+  categories:
+  - BSweapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: WeaponTaserShop
+  description: Позволяет ошеломить даже самого сильного врага.
+  productEntity: WeaponTaser
+  cost:
+    ERTCrystal: 10
+  categories:
+  - BSweapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: MagazinePistolShop
+  description: Пистолетный магазин. Совместим с G23.
+  productEntity: MagazinePistol
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSammo
+
+- type: listing
+  id: SpeedLoaderMagnumShop
+  description: Револьверный барабан. Совместим с R44.
+  productEntity: SpeedLoaderMagnum
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSammo
+
+- type: listing
+  id: GrenadeFlashBangShop
+  description: Стандартная светошумовая граната. Перед использованием стоит одеть экипировку с защитой от вспышек.
+  productEntity: GrenadeFlashBang
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSBoom
+
+- type: listing
+  id: SmokeGrenadeShop
+  description: Граната выпускающая огромное количество слезоточивого газа. подходит для сдерживания, или пыток.
+  productEntity: TearGasGrenade
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSBoom
+
+- type: listing
+  id: EmpGrenadeShop
+  description: Поможет остановить сломанного киборга.
+  productEntity: EmpGrenade
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSBoom
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ExGrenadeShop
+  description: Обычная взрывная граната.
+  productEntity: ExGrenade
+  cost:
+    ERTCrystal: 3
+  categories:
+  - BSBoom
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: ClothingBeltHolsterShop
+  description: Глубокая плечевая кобура, поможет вместить оружие и патроны.
+  productEntity: ClothingBeltHolster
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSequip
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: ClothingBeltMilitaryWebbingBlueshieldShop
+  description: Удобный РПС синего щита
+  productEntity: ClothingBeltMilitaryWebbingBlueshield
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSequip
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingShoesBootsMagSciShop
+  description: Предотвращяют подскальзывания и позволяют удобно передвигаться в условиях невесомости.
+  productEntity: ClothingShoesBootsMagSci
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSequip
+
+- type: listing
+  id: JetpackBlueFilledShop
+  description: Синий джетпак. Позволяет летать в космосе. Топливо входит в комплект.
+  productEntity: JetpackBlueFilled
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSequip
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingMaskGasSwatShop
+  description: Удобный противогаз дающий небольшую защиту.
+  productEntity: ClothingMaskGasSwat
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSequip
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: BlueShieldArmoredTrenchShop
+  description: Тренч из самых лучших синтетических материалов и с прочными вставками из керамических пластин. Не мешает движениям, но защищает на ура.
+  productEntity: BlueShieldArmoredTrench
+  cost:
+    ERTCrystal: 3
+  categories:
+  - BSequip
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: CigPackBlackShop
+  productEntity: CigPackBlack
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSnanit
+
+- type: listing
+  id: CombatMedipenShop
+  productEntity: CombatMedipen
+  cost:
+    ERTCrystal: 3
+  categories:
+  - BSnanit
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: MedkitCombatFilledShop
+  description: Аптечка необходимая для лечения боевых ранений.
+  productEntity: MedkitCombatFilled
+  cost:
+    ERTCrystal: 4
+  categories:
+  - BSnanit
+
+- type: listing
+  id: OmnizineChemistryBottleShop
+  description: Химичское вещество позволяющее вылечить большинство повреждений.
+  productEntity: OmnizineChemistryBottle
+  cost:
+    ERTCrystal: 6
+  categories:
+  - BSnanit
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 3
+
+- type: listing
+  id: PenCentcomShop
+  productEntity: PenCentcom
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSmore
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: EncryptionKeyBinaryShop
+  productEntity: EncryptionKeyBinary
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSmore
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: FlashShop
+  productEntity: Flash
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSmore
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 3
+
+- type: listing
+  id: SpaceCash5000Shop
+  description: 5000 кредитов для покупки разного снаряжения на станции.
+  productEntity: SpaceCash5000
+  cost:
+    ERTCrystal: 3
+  categories:
+  - BSmore
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: TargetClownShop
+  productEntity: TargetClown
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSmore
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: SoapNTShop
+  productEntity: SoapNT
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSengi
+
+- type: listing
+  id: ClothingBeltUtilityEngineeringShop
+  description: Полный набор инструментов позволяющий разобрать что угодно.
+  productEntity: ClothingBeltUtilityEngineering
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSengi
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: JawsOfLifeShop
+  description: Комбинация лома и кусачек необходимая для вскрытия дверей и пожарных шлюзов.
+  productEntity: JawsOfLife
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSengi
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+# - type: listing
+#  id: ClothingBackpackDuffelSurgeryFilledShop
+#  productEntity: ClothingBackpackDuffelSurgeryFilled
+#  cost:
+#    ERTCrystal: 4
+#  categories:
+#  - BSengi
+
+- type: listing
+  id: TrackingImplanterShop
+  name: Имплант трекер
+  productEntity: TrackingImplanter
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSimp
+
+- type: listing
+  id: MindShieldImplanterShop
+  name: Имплант защиты разума
+  productEntity: MindShieldImplanter
+  cost:
+    ERTCrystal: 2
+  categories:
+  - BSimp
+
+- type: listing
+  id: PersonalAIShop
+  productEntity: PersonalAI
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSsouz
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: BoxMREShop
+  productEntity: BoxMRE
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSmoremore
+
+- type: listing
+  id: ClothingNeckScarfStripedBlueShop
+  productEntity: ClothingNeckScarfStripedBlue
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSmoremore
+
+- type: listing
+  id: RevolverCapGunShop
+  productEntity: RevolverCapGun
+  cost:
+    ERTCrystal: 1
+  categories:
+  - BSmoremore
+  conditions:
+  - !type:ListingLimitedStockCondition
+   stock: 1
+
+- type: listing
+  id: BalloonNTShop
+  productEntity: BalloonNT
+  cost:
+    ERTCrystal: 20
+  categories:
+  - BSmoremore
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: ClothingHeadHatCatEarsshop
+  productEntity: ClothingHeadHatCatEars
+  cost:
+    ERTCrystal: 20
+  categories:
+  - BSmoremore
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

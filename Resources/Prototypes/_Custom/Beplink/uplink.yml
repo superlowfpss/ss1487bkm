@@ -144,7 +144,7 @@
   - BSweapons
   conditions:
     - !type:ListingLimitedStockCondition
-      stock: 2
+      stock: 1
 
 - type: listing
   id: WeaponRevolverR44Shop

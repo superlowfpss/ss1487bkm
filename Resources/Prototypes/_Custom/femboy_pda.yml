@@ -1,0 +1,15 @@
+- type: entity
+  parent: BasePDA
+  id: FemboyPDA
+  name: КПК Фембоя
+  description: Милый, розовый КПК
+  components:
+  - type: Sprite
+    sprite: _Custom/femboypda.rsi
+  - type: Pda
+    id: PassengerIDCard
+    state: pda-femboy
+  - type: PdaBorderColor
+    borderColor: "#FFA5F1"
+  - type: Icon
+    state: pda-femboy

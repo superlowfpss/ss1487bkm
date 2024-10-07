@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakFemboy
+  name: Плащ фембоя
+  description: Плащ для настоящих фембойчиков :3
+  components:
+  - type: Sprite
+    sprite: _Custom/femboy.rsi

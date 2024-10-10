@@ -1,0 +1,161 @@
+- type: guideEntry
+  id: RulesSpaceFrontier
+  name: Правила сервера
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/SpaceFrontier.xml"
+  children:
+  - CustomRule0
+  - CustomRule1
+  - CustomRule2
+  - CustomRule31
+  - CustomRule32
+  - CustomRule32
+  - CustomRule33
+  - CustomRule34
+  - CustomRule35
+  - CustomRule36
+  - CustomRule37
+  - CustomRule38
+  - CustomRule39
+  - CustomRule3
+  - CustomRule4
+  - CustomRule6
+  - CustomRule7
+  - CustomRule7
+  - CustomRule8
+  - CustomRule9
+  - CustomRule10
+
+- type: guideEntry
+  id: CustomRule0
+  name: Правило 0
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: CustomRule1
+  name: Правило 1
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule1.xml"
+
+- type: guideEntry
+  id: CustomRule2
+  name: Правило 2
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule2.xml"
+
+- type: guideEntry
+  id: CustomRule3
+  name: Правило 3
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.xml"
+
+- type: guideEntry
+  id: CustomRule31
+  name: Правило 3.1
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.1.xml"
+
+- type: guideEntry
+  id: CustomRule32
+  name: Правило 3.2
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.2.xml"
+
+- type: guideEntry
+  id: CustomRule33
+  name: Правило 3.3
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.3.xml"
+
+- type: guideEntry
+  id: CustomRule34
+  name: Правило 3.4
+  priority: 8
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.4.xml"
+
+- type: guideEntry
+  id: CustomRule35
+  name: Правило 3.5
+  priority: 9
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.5.xml"
+
+- type: guideEntry
+  id: CustomRule36
+  name: Правило 3.6
+  priority: 10
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.6.xml"
+
+- type: guideEntry
+  id: CustomRule37
+  name: Правило 3.7
+  priority: 11
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.7.xml"
+
+- type: guideEntry
+  id: CustomRule38
+  name: Правило 3.8
+  priority: 12
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.8.xml"
+
+- type: guideEntry
+  id: CustomRule39
+  name: Правило 3.9
+  priority: 13
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule3.9.xml"
+
+- type: guideEntry
+  id: CustomRule4
+  name: Правило 4
+  priority: 14
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule4.xml"
+
+- type: guideEntry
+  id: CustomRule6
+  name: Правило 6
+  priority: 15
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule6.xml"
+
+- type: guideEntry
+  id: CustomRule7
+  name: Правило 7
+  priority: 16
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule7.xml"
+
+- type: guideEntry
+  id: CustomRule8
+  name: Правило 8
+  priority: 17
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule8.xml"
+
+- type: guideEntry
+  id: CustomRule9
+  name: Правило 9
+  priority: 18
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule9.xml"
+
+- type: guideEntry
+  id: CustomRule10
+  name: Правило 10
+  priority: 19
+  ruleEntry: true
+  text: "/ServerInfo/_Custom/Guidebook/ServerRules/Rule10.xml"

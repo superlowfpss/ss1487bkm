@@ -40,11 +40,12 @@ enabled = true
 # connectaddress = "udp://localhost:1212"
 
 [game]
-hostname = "[RU] [MRP] Космический рубеж 🌠"
+hostname = "🚀 Космический рубеж | ОСЩ 👮 | Все роли 🌠"
 maxplayers = 30
 soft_max_players = 20
 desc="""
 🌠 Космический рубеж - сервер со средним уровнем отыгрыша, адекватной администрацией и прекрасной сборкой! Присоединяйся и испытай новые приключения с нами! 💫
+🚀 Присоединяйся к нам в дискорд и узнавай о нашем сервере больше!
 """
 map_pool="BackmenDefaultMapPool"
 defaultpreset="secret"
@@ -123,7 +124,7 @@ alert.min_players_sharing_connection = 2
 enabled=true
 
 [server]
-rules_file="RulesBackmen"
+rules_file="RulesSpaceFrontier"
 
 [console]
 # If this is true, people connecting from this machine (loopback)

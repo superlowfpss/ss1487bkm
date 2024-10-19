@@ -1,0 +1,64 @@
+- type: entity
+  name: СтарТокен
+  parent: BaseItem
+  id: StarToken
+  categories: [ HideSpawnMenu ]
+  suffix: 20 ST
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Sprite
+    sprite: _Custom/Sponsor/startoken.rsi
+    state: telecrystal
+  - type: Item
+    sprite: _Custom/Sponsor/startoken.rsi
+    size: Tiny
+  - type: Stack
+    count: 20
+    stackType: StarToken
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      StarToken: 1
+
+- type: entity
+  parent: StarToken
+  id: StarToken1
+  suffix: 1 ST
+  name: СтарТокен
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: StarToken
+  id: StarToken5
+  suffix: 5 ST
+  name: СтарТокен
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: StarToken
+  id: StarToken10
+  suffix: 10 ST
+  name: СтарТокен
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: StarToken
+  id: StarTokenDbg
+  suffix: 999 ST
+  name: СтарТокен
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Stack
+    count: 999999

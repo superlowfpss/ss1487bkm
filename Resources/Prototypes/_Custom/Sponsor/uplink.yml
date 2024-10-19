@@ -1,0 +1,95 @@
+# Base
+- type: entity
+  parent: BaseItem
+  id: BaseSFSponsorUplink
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Item
+    size: Small
+    sprite: _Custom/Sponsor/uplink.rsi
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Sprite
+    sprite: _Custom/Sponsor/uplink.rsi
+    layers:
+    - state: icon-on
+  - type: Appearance
+  - type: StaticPrice
+    price: 100
+  - type: Store
+    categories:
+      - General
+      - SecurityThings
+      - HOSHeadOfDepartment
+      - CMOHeadOfDepartment
+      - CEHeadOfDepartment
+      - RDHeadOfDepartment
+      - HOPHeadOfDepartment
+      - CaptainHeadOfDepartment
+      - IAAHeadOfDepartment
+      - ScienceThings
+      - MedicalThings
+      - ServiceThings
+      - CargoThings
+      - EngineeringThings
+      - SpecialThings
+      - Friends
+      - Cloaks
+      - QMHeadOfDepartment
+      - Music
+    currencyWhitelist:
+      - StarToken
+    balance:
+      StarToken: 0
+
+# 1 Tier
+- type: entity
+  parent: BaseSFSponsorUplink
+  id: SFSponsorUplink40
+  name: портативный магазин Космического Рубежа
+  description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
+  suffix: 40
+  components:
+  - type: Store
+    balance:
+      StarToken: 40
+
+# 2 Tier
+- type: entity
+  parent: BaseSFSponsorUplink
+  id: SFSponsorUplink80
+  name: портативный магазин Космического Рубежа
+  description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
+  suffix: 80
+  components:
+  - type: Store
+    balance:
+      StarToken: 80
+
+# 3 Tier
+- type: entity
+  parent: BaseSFSponsorUplink
+  id: SFSponsorUplink100
+  name: портативный магазин Космического Рубежа
+  description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
+  suffix: 100
+  components:
+  - type: Store
+    balance:
+      StarToken: 100
+
+# Debug
+- type: entity
+  parent: BaseSFSponsorUplink
+  id: SFSponsorUplinkDbg
+  name: портативный магазин Санрайз
+  description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
+  suffix: 999
+  components:
+  - type: Store
+    balance:
+      StarToken: 999999

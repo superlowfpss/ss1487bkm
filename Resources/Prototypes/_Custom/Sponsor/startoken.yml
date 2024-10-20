@@ -55,6 +55,16 @@
 
 - type: entity
   parent: StarToken
+  id: StarToken20
+  suffix: 20 ST
+  name: СтарТокен
+  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: StarToken
   id: StarTokenDbg
   suffix: 999 ST
   name: СтарТокен
@@ -62,3 +72,10 @@
   components:
   - type: Stack
     count: 999999
+
+- type: currency
+  id: StarToken
+  displayName: ST
+  cash:
+    1: StarToken1
+  canWithdraw: true

@@ -30,17 +30,14 @@
       - RDHeadOfDepartment
       - HOPHeadOfDepartment
       - CaptainHeadOfDepartment
-      - IAAHeadOfDepartment
       - ScienceThings
       - MedicalThings
       - ServiceThings
       - CargoThings
       - EngineeringThings
-      - SpecialThings
       - Friends
       - Cloaks
       - QMHeadOfDepartment
-      - Music
     currencyWhitelist:
       - StarToken
     balance:
@@ -86,10 +83,2052 @@
 - type: entity
   parent: BaseSFSponsorUplink
   id: SFSponsorUplinkDbg
-  name: портативный магазин Санрайз
+  name: портативный магазин Космического рубежа
   description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
-  suffix: 999
+  suffix: Debug
   components:
   - type: Store
     balance:
       StarToken: 999999
+
+- type: storeCategory
+  id: General
+  name: Общее
+
+- type: storeCategory
+  id: SecurityThings
+  name: Служба Безопасности
+
+- type: storeCategory
+  id: HOSHeadOfDepartment
+  name: Глава СБ
+
+- type: storeCategory
+  id: CMOHeadOfDepartment
+  name: Главный Врач
+
+- type: storeCategory
+  id: CEHeadOfDepartment
+  name: Старший Инженер
+
+- type: storeCategory
+  id: RDHeadOfDepartment
+  name: Научный Руководитель
+
+- type: storeCategory
+  id: HOPHeadOfDepartment
+  name: Глава Персонала
+
+- type: storeCategory
+  id: CaptainHeadOfDepartment
+  name: Капитан
+
+- type: storeCategory
+  id: ScienceThings
+  name: Научный отдел
+
+- type: storeCategory
+  id: MedicalThings
+  name: Медицинский отдел
+
+- type: storeCategory
+  id: ServiceThings
+  name: Сервисный отдел
+
+- type: storeCategory
+  id: CargoThings
+  name: Отдел снабжения
+
+- type: storeCategory
+  id: EngineeringThings
+  name: Инженерный отдел
+
+- type: storeCategory
+  id: Friends
+  name: Друзья
+
+- type: storeCategory
+  id: Cloaks
+  name: Плащи
+
+- type: storeCategory
+  id: QMHeadOfDepartment
+  name: Квартирмейстер
+
+# Каталог
+
+# Общее
+- type: listing
+  id: UplinkSpaceFrontierPresentRandom
+  name: Подарок
+  productEntity: PresentRandom
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMaterialHideCorgi
+  name: Шкура корги
+  productEntity: MaterialHideCorgi
+  cost:
+    StarToken: 15
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierSkub
+  name: Скаб
+  productEntity: Skub
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatSkub
+  name: Шапка скаба
+  productEntity: ClothingHeadHatSkub
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterSkub
+  name: Костюм скаба
+  productEntity: ClothingOuterSkub
+  cost:
+    StarToken: 15
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingUniformJumpsuitSkeleton
+  name: Комбинезон скелета
+  productEntity: ClothingUniformJumpsuitSkeleton
+  cost:
+    StarToken: 12
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingMaskSkull
+  name: Саска черепа
+  productEntity: ClothingMaskSkull
+  cost:
+    StarToken: 4
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierSynthesizerInstrument
+  name: Музыкальный синтезатор
+  productEntity: SynthesizerInstrument
+  cost:
+    StarToken: 20
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierToySword
+  name: Игрушечный меч
+  productEntity: ToySword
+  cost:
+    StarToken: 6
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierNukeDiskFake
+#  name: Поддельный диск ядерной авторизации
+#  productEntity: NukeDiskFake
+#  cost:
+#    StarToken: 30
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierRevolverCapGun
+  name: Игрушечный пистолет
+  productEntity: RevolverCapGun
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierRevolverCapGunFake
+#  name: Игрушечный пистолет
+#  productEntity: RevolverCapGunFake
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierFoamCutlass
+  name: Игрушечная абордажная сабля
+  productEntity: FoamCutlass
+  cost:
+    StarToken: 6
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMrChips
+  name: Мистер Чипс
+  productEntity: MrChips
+  cost:
+    StarToken: 4
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMrDips
+  name: Мистер Дипс
+  productEntity: MrDips
+  cost:
+    StarToken: 4
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierBeachBall
+  name: Пляжный мяч
+  productEntity: BeachBall
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierSpaceFrontierToyHammer
+  name: Резиновый молоток
+  productEntity: ToyHammer
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatMagician
+  name: Цилиндр фокусника
+  productEntity: ClothingHeadHatMagician
+  cost:
+    StarToken: 6
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierCrazyGlue
+  name: Тюбик сумашедшего клея
+  productEntity: CrazyGlue
+  cost:
+    StarToken: 8
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierPlasticBanana
+  name: Банан
+  productEntity: PlasticBanana
+  cost:
+    StarToken: 4
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierWhoopieCushion
+  name: Подушка-пердушка
+  productEntity: WhoopieCushion
+  cost:
+    StarToken: 6
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierRGBStaff
+  name: RGB посох
+  productEntity: RGBStaff
+  cost:
+    StarToken: 15
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierPlunger
+  name: Вантуз
+  productEntity: Plunger
+  cost:
+    StarToken: 5
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMaterialHideBear
+  name: Медвежья шкура
+  productEntity: MaterialHideBear
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatWatermelon
+  name: Арбузный шлем
+  productEntity: ClothingHeadHatWatermelon
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierBookSpaceEncyclopedia
+  name: Космическая энциклопедия
+  productEntity: BookSpaceEncyclopedia
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierCigarCase
+  name: Портсигар
+  productEntity: CigarCase
+  cost:
+    StarToken: 5
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierCigarGoldCase
+  name: Премиум портсигар
+  productEntity: CigarGoldCase
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierCrayonRainbow
+  name: Радужный мелок
+  productEntity: CrayonRainbow
+  cost:
+    StarToken: 15
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingUniformColorJumpskirtRainbow
+  name: Радужная юбка-комбинезон
+  productEntity: ClothingUniformColorJumpskirtRainbow
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingUniformColorRainbow
+  name: Радужный комбинезон
+  productEntity: ClothingUniformColorRainbow
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierBedsheetRainbow
+  name: Радужный комбинезон
+  productEntity: BedsheetRainbow
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierSpeedLoaderCap
+  name: Зарядник пистонов
+  productEntity: SpeedLoaderCap
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierBoxCartridgeCap
+  name: Коробка пистонов
+  productEntity: BoxCartridgeCap
+  cost:
+    StarToken: 30
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatFlowerWreath
+  name: Цветочный венок
+  productEntity: ClothingHeadHatFlowerWreath
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckBling
+  name: Побрякушки
+  productEntity: ClothingNeckBling
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakMoth
+  name: Плащ моли
+  productEntity: ClothingNeckCloakMoth
+  cost:
+    StarToken: 10
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierBoxMRE
+  name: И.Р.П.
+  productEntity: BoxMRE
+  cost:
+    StarToken: 5
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierFlippoLighter
+  name: Зажигалка флиппо
+  productEntity: FlippoLighter
+  cost:
+    StarToken: 5
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterCoatBomber
+  name: Куртка-бомбер
+  productEntity: ClothingOuterCoatBomber
+  cost:
+    StarToken: 5
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierDrinkVodkaBottleFull
+  name: Бутылка водки
+  productEntity: DrinkVodkaBottleFull
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierFoodTinMRE
+  name: Мясная консерва
+  productEntity: FoodTinMRE
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: UplinkSpaceFrontierFoodTinBeans
+  name: Консервированная фасоль
+  productEntity: FoodTinBeans
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: UplinkSpaceFrontierFoodTinPeachesMaint
+  name: Техтуннельные персики
+  productEntity: FoodTinPeachesMaint
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: UplinkSpaceFrontierDrinkWhiskeyBottleFull
+  name: Особый запас дядюшки Гита
+  productEntity: DrinkWhiskeyBottleFull
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierDrinkRumBottleFull
+  name: Кубинский пряный ром капитана Пита
+  productEntity: DrinkRumBottleFull
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierDrinkBeerBottleFull
+  name: Пиво
+  productEntity: DrinkBeerBottleFull
+  cost:
+    StarToken: 3
+  categories:
+  - General
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+#- type: listing
+#  id: UplinkSpaceFrontierClothingOuterHardsuitBasic
+#  name: Базовый скафандр
+#  productEntity: ClothingOuterHardsuitBasic
+#  cost:
+#    StarToken: 20
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierClothingHeadHelmetHardsuitBasic
+#  name: Базовый шлем скафандра
+#  productEntity: ClothingHeadHelmetHardsuitBasic
+#  cost:
+#    StarToken: 5
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierPowerCellHyper
+#  name: Батарея гипер ёмкости
+#  productEntity: PowerCellHyper
+#  cost:
+#    StarToken: 30
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierPowerCellAntiqueProto
+#  name: Прототип древней батареи
+#  productEntity: PowerCellAntiqueProto
+#  cost:
+#    StarToken: 45
+#  categories:
+#  - General
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+# Плащи:
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakGoliathCloak
+  name: Плащ голиафа
+  productEntity: ClothingNeckCloakGoliathCloak
+  cost:
+    StarToken: 15
+  categories:
+  - Cloaks
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakTrans
+  name: Плащ вампира
+  productEntity: ClothingNeckCloakTrans
+  cost:
+    StarToken: 15
+  categories:
+  - Cloaks
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakHerald
+  name: Плащ герольда
+  productEntity: ClothingNeckCloakHerald
+  cost:
+    StarToken: 15
+  categories:
+  - Cloaks
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakVoid
+  name: Плащ пустоты
+  productEntity: ClothingNeckCloakVoid
+  cost:
+    StarToken: 15
+  categories:
+  - Cloaks
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierClothingCloakGamer
+  name: Легендарный плащ геймера
+  productEntity: ClothingCloakGamer
+  cost:
+    StarToken: 35
+  categories:
+  - Cloaks
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+# Инженерный отдел
+- type: listing
+  id: UplinkSpaceFrontierHolofanProjector
+  name: Атмос голопроектор
+  productEntity: HolofanProjector
+  cost:
+    StarToken: 9
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierWelderExperimental
+  name: Эксперементальный сварочный аппарат
+  productEntity: WelderExperimental
+  cost:
+    StarToken: 15
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierJawsOfLife
+  name: Челюсти жизни
+  productEntity: JawsOfLife
+  cost:
+    StarToken: 25
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierPowerDrill
+  name: Электродрель
+  productEntity: PowerDrill
+  cost:
+    StarToken: 15
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierRCDAmmo
+  name: Катридж РСУ
+  productEntity: RCDAmmo
+  cost:
+    StarToken: 10
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierRCD
+  name: РСУ
+  productEntity: RCD
+  cost:
+    StarToken: 30
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierOmnitool
+  name: Омнитул
+  productEntity: Omnitool
+  cost:
+    StarToken: 30
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterAtmosianBomberJacket
+  name: Куртка-бомбер атмосианина
+  productEntity: ClothingOuterAtmosianBomberJacket
+  cost:
+    StarToken: 10
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierClothingMaskGasAtmosian
+  name: Противогаз атмосианина
+  productEntity: ClothingMaskGasAtmosian
+  cost:
+    StarToken: 10
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierClothingCloakAtmosian
+  name: Плащ атмосианина
+  productEntity: ClothingCloakAtmosian
+  cost:
+    StarToken: 15
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+#- type: listing
+#  id: UplinkSpaceFrontierAmeJar
+#  name: Топливный бак ДАМ
+#  productEntity: AmeJar
+#  cost:
+#    StarToken: 5
+#  categories:
+#  - EngineeringThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerDepartmentCondition
+#    whitelist:
+#    - Engineering
+
+#- type: listing
+#  id: UplinkSpaceFrontierJetpackVoidFilled
+#  name: Пустотный джетпак
+#  productEntity: JetpackVoidFilled
+#  cost:
+#    StarToken: 25
+#  categories:
+#  - EngineeringThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerDepartmentCondition
+#    whitelist:
+#    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierSheetGlass
+  name: Стекло (30 шт)
+  productEntity: SheetGlass
+  cost:
+    StarToken: 5
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierDoubleEmergencyOxygenTankFilled
+  name: Двойной аварийный кислородный баллон
+  productEntity: DoubleEmergencyOxygenTankFilled
+  cost:
+    StarToken: 5
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+- type: listing
+  id: UplinkSpaceFrontierDoubleEmergencyNitrogenTankFilled
+  name: Двойной аварийный азотный баллон
+  productEntity: DoubleEmergencyNitrogenTankFilled
+  cost:
+    StarToken: 5
+  categories:
+  - EngineeringThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Engineering
+
+#- type: listing
+#  id: UplinkSpaceFrontierSheetPlasma
+#  name: Плазма (30 шт)
+#  productEntity: SheetPlasma
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - EngineeringThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierSheetUranium
+#  name: Уран (30 шт)
+#  productEntity: SheetUranium
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - EngineeringThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+# Старший Инженер
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakCe
+  name: Плащ старшего инженера
+  productEntity: ClothingNeckCloakCe
+  cost:
+    StarToken: 15
+  categories:
+  - CEHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - ChiefEngineer
+
+- type: listing
+  id: UplinkSpaceFrontierBookEngineersHandbook
+  name: Справочник инженера
+  productEntity: BookEngineersHandbook
+  cost:
+    StarToken: 8
+  categories:
+  - CEHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - ChiefEngineer
+
+# ГСБ:
+- type: listing
+  id: UplinkSpaceFrontierClothingMaskGasSwat
+  name: Противогаз спецназа
+  productEntity: ClothingMaskGasSwat
+  cost:
+    StarToken: 10
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHandsGlovesLeatherHoS
+  name: Кожаные перчатки
+  productEntity: ClothingHandsGlovesLeatherHoS
+  cost:
+    StarToken: 8
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterCoatHoSGreatcoat
+  name: Бронированная шинель
+  productEntity: ClothingOuterCoatHoSGreatcoat
+  cost:
+    StarToken: 15
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingBackpackSatchelHoS
+  name: Сумка главы службы безопасности
+  productEntity: ClothingBackpackSatchelHoS
+  cost:
+    StarToken: 12
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingUniformJumpsuitHoSOld
+  name: Старый комбинезон главы службы безопасности
+  productEntity: ClothingUniformJumpsuitHoSOld
+  cost:
+    StarToken: 10
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakHOS
+  name: Плащ главы службы безопасности
+  productEntity: ClothingNeckCloakHOS
+  cost:
+    StarToken: 15
+  categories:
+  - HOSHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfSecurity
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterCoatLabResearchDirector
+  name: Халат научного руководителя
+  productEntity: ClothingOuterCoatRD
+  cost:
+    StarToken: 15
+  categories:
+  - RDHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:  
+    - ResearchDirector
+
+# Капитан:
+- type: listing
+  id: UplinkSpaceFrontierClothingMaskGasCaptain
+  name: Противогаз капитана
+  productEntity: ClothingMaskGasCaptain
+  cost:
+    StarToken: 10
+  categories:
+  - CaptainHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - Captain
+
+# Главврач:
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterCoatLabCmo
+  name: Лабораторный халат главного врача
+  productEntity: ClothingOuterCoatLabCmo
+  cost:
+    StarToken: 15
+  categories:
+  - CMOHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - ChiefMedicalOfficer
+
+- type: listing
+  id: UplinkSpaceFrontierClothingCloakCmo
+  name: Плащ главного врача
+  productEntity: ClothingCloakCmo
+  cost:
+    StarToken: 15
+  categories:
+  - CMOHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - ChiefMedicalOfficer
+
+# Глава персонала:
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatHOP
+  name: Фуражка главы персонала
+  productEntity: ClothingHeadHatHOP
+  cost:
+    StarToken: 10
+  categories:
+  - HOPHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfPersonnel
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakHOP
+  name: Плащ главы персонала
+  productEntity: ClothingNeckCloakHOP
+  cost:
+    StarToken: 15
+  categories:
+  - HOPHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - HeadOfPersonnel
+
+# Отдел СБ:
+- type: listing
+  id: UplinkSpaceFrontierTelescopicShield
+  name: Телескопический щит
+  productEntity: TelescopicShield
+  cost:
+    StarToken: 25
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierWeaponDisabler
+  name: Станнер
+  productEntity: WeaponDisabler
+  cost:
+    StarToken: 10
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterArmorBulletproof
+  name: Пуленепробиваемый жилет
+  productEntity: ClothingOuterArmorBulletproof
+  cost:
+    StarToken: 10
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierMedkitFilled
+  name: Аптечка первой помощи
+  productEntity: MedkitFilled
+  cost:
+    StarToken: 15
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHandsGlovesCombat
+  name: Боевые перчатки
+  productEntity: ClothingHandsGlovesCombat
+  cost:
+    StarToken: 20
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+#- type: listing
+#  id: UplinkSpaceFrontierCombatMedipen
+#  name: Боевой медипен
+#  productEntity: CombatMedipen
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - SecurityThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerDepartmentCondition
+#    whitelist:
+#    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierMagazineBoxPistol
+  name: Коробка патронов (.35 авто)
+  productEntity: MagazineBoxPistol
+  cost:
+    StarToken: 30
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+- type: listing
+  id: UplinkSpaceFrontierBoxBodyBag
+  name: Коробка мешков для тел
+  productEntity: BoxBodyBag
+  cost:
+    StarToken: 5
+  categories:
+  - SecurityThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Security
+
+# Квартирмейстер
+
+- type: listing
+  id: UplinkSpaceFrontierClothingNeckCloakQM
+  name: Плащ квартирмейстера
+  productEntity: ClothingNeckCloakQM
+  cost:
+    StarToken: 15
+  categories:
+  - QMHeadOfDepartment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerJobCondition
+    whitelist:
+    - Quartermaster
+
+# Медицинский отдел
+- type: listing
+  id: UplinkSpaceFrontierSpaceFrontierCryostasisBeaker
+  name: Криостазисная мензурка
+  productEntity: CryostasisBeaker
+  cost:
+    StarToken: 15
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+#- type: listing
+#  id: UplinkSunriseEphedrineChemistryBottle
+#  name: Эфедрин
+#  productEntity: EphedrineChemistryBottle
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - MedicalThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMedicatedSuture
+  name: Медицинская нить (10 шт)
+  productEntity: MedicatedSuture
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierPillCanisterDermaline
+  name: Баночка с дермалином
+  productEntity: PillCanisterDermaline
+  cost:
+    StarToken: 15
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierPillCanisterBicaridine
+  name: Баночка с бикаридином
+  productEntity: PillCanisterBicaridine
+  cost:
+    StarToken: 15
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierSyringeBluespace
+  name: Блюспейс-шприц
+  productEntity: SyringeBluespace
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierRegenerativeMesh
+  name: Регенеративная сеть (10 шт)
+  productEntity: RegenerativeMesh
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHandsGlovesNitrile
+  name: Нитриловые перчатки
+  productEntity: ClothingHandsGlovesNitrile
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierEmergencyMedipen
+  name: Экстренный медипен
+  productEntity: EmergencyMedipen
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierAntiPoisonMedipen
+  name: Автоинъектор противоядия
+  productEntity: AntiPoisonMedipen
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierBruteAutoInjector
+  name: Автоинъектор мех-повреждений
+  productEntity: BruteAutoInjector
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierRadAutoInjector
+  name: Автоинъектор рад-повреждений
+  productEntity: RadAutoInjector
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierBurnAutoInjector
+  name: Автоинъектор физ-повреждений
+  productEntity: BurnAutoInjector
+  cost:
+    StarToken: 5
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierPillCanisterDylovene
+  name: Баночка для таблеток (диловен)
+  productEntity: PillCanisterDylovene
+  cost:
+    StarToken: 8
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierPillCanisterHyronalin
+  name: Баночка для таблеток (хироналин)
+  productEntity: PillCanisterHyronalin
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierPillCanisterDexalin
+  name: Баночка для таблеток (дексалин)
+  productEntity: PillCanisterDexalin
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierBloodpack
+  name: Пакет крови (10 шт)
+  productEntity: Bloodpack
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+- type: listing
+  id: UplinkSpaceFrontierGauze
+  name: Марлевый бинт (10 шт)
+  productEntity: Gauze
+  cost:
+    StarToken: 10
+  categories:
+  - MedicalThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Medical
+
+# Научный отдел:
+- type: listing
+  id: UplinkSpaceFrontierBookScientistsGuidebook
+  name: Справочник учёного
+  productEntity: BookScientistsGuidebook
+  cost:
+    StarToken: 8
+  categories:
+  - ScienceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Science
+
+- type: listing
+  id: UplinkSpaceFrontierResearchDisk5000
+  name: Диск исследовательских очков (5000)
+  productEntity: ResearchDisk5000
+  cost:
+    StarToken: 15
+  categories:
+  - ScienceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Science
+
+#- type: listing
+#  id: UplinkSpaceFrontierClothingHandsGlovesColorYellow
+#  name: Изолированные перчатки
+#  productEntity: ClothingHandsGlovesColorYellow
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - ScienceThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerDepartmentCondition
+#    whitelist:
+#    - Science
+
+- type: listing
+  id: UplinkSpaceFrontierClothingShoesBootsMag
+  name: Магнитные сапоги
+  productEntity: ClothingShoesBootsMag
+  cost:
+    StarToken: 10
+  categories:
+  - ScienceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Science
+
+# Сервисный отдел
+- type: listing
+  id: UplinkSpaceFrontierFoodCartCold
+  name: Тележка холодной еды
+  productEntity: FoodCartCold
+  cost:
+    StarToken: 20
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierJanitorialTrolley
+  name: Тележка уборщика
+  productEntity: JanitorialTrolley
+  cost:
+    StarToken: 20
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierFoodCartHot
+  name: Тележка горячей еды
+  productEntity: FoodCartHot
+  cost:
+    StarToken: 25
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+#- type: listing
+#  id: UplinkSpaceFrontierMuteToxinChemistryBottle
+#  name: Токсин немоты
+#  productEntity: MuteToxinChemistryBottle
+#  cost:
+#    StarToken: 16
+#  categories:
+#  - ServiceThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierUnstableMutagenChemistryBottle
+  name: Нестабильный мутаген
+  productEntity: UnstableMutagenChemistryBottle
+  cost:
+    StarToken: 16
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierRobustHarvestChemistryBottle
+  name: Robust harvest
+  productEntity: RobustHarvestChemistryBottle
+  cost:
+    StarToken: 8
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 4
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierVendingMachineRestockBooze
+  name: Набор пополнения АлкоМат
+  productEntity: VendingMachineRestockBooze
+  cost:
+    StarToken: 15
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 4
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierVendingMachineRestockChefvend
+  name: Набор пополнения ШефВенд
+  productEntity: VendingMachineRestockChefvend
+  cost:
+    StarToken: 15
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierBoxLightMixed
+  name: Коробка смешанных лампочек
+  productEntity: BoxLightMixed
+  cost:
+    StarToken: 10
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierSprayBottleSpaceCleaner
+  name: Космический очиститель
+  productEntity: SprayBottleSpaceCleaner
+  cost:
+    StarToken: 3
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierMousetrap
+  name: Мышеловка
+  productEntity: Mousetrap
+  cost:
+    StarToken: 5
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierAdvMopItem
+  name: Продвинутая швабра
+  productEntity: AdvMopItem
+  cost:
+    StarToken: 20
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+- type: listing
+  id: UplinkSpaceFrontierTrashBag
+  name: Мешок для мусора
+  productEntity: TrashBag
+  cost:
+    StarToken: 3
+  categories:
+  - ServiceThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Civilian
+
+# Отдел карго:
+#- type: listing
+#  id: UplinkSpaceFrontierCargoTelepad
+#  name: Грузовой телепад
+#  productEntity: CargoTelepad
+#  cost:
+#    StarToken: 30
+#  categories:
+#  - CargoThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierVehicleKeyATV
+#  name: Ключ от квадрацикла
+#  productEntity: VehicleKeyATV
+#  cost:
+#    StarToken: 10
+#  categories:
+#  - CargoThings
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierAppraisalTool
+  name: Оценочный инструмент
+  productEntity: AppraisalTool
+  cost:
+    StarToken: 5
+  categories:
+  - CargoThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Cargo
+
+- type: listing
+  id: UplinkSpaceFrontierClothingBeltUtilityFilled
+  name: Пояс для инструментов
+  productEntity: ClothingBeltUtilityFilled
+  cost:
+    StarToken: 10
+  categories:
+  - CargoThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Cargo
+
+- type: listing
+  id: UplinkSpaceFrontierClothingShoesBootsWork
+  name: Рабочие ботинки
+  productEntity: ClothingShoesBootsWork
+  cost:
+    StarToken: 1
+  categories:
+  - CargoThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Cargo
+
+- type: listing
+  id: UplinkSpaceFrontierClothingOuterVestHazard
+  name: Светоотражающий жилет
+  productEntity: ClothingOuterVestHazard
+  cost:
+    StarToken: 2
+  categories:
+  - CargoThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Cargo
+
+- type: listing
+  id: UplinkSpaceFrontierClothingHeadHatHardhatYellow
+  name: Желтая рабочая каска
+  productEntity: ClothingHeadHatHardhatYellow
+  cost:
+    StarToken: 2
+  categories:
+  - CargoThings
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerDepartmentCondition
+    whitelist:
+    - Cargo
+
+# Друзья
+- type: listing
+  id: UplinkSpaceFrontierMobHamster
+  name: Хомяк
+  productEntity: MobHamster
+  cost:
+    StarToken: 15
+  categories:
+  - Friends
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+#- type: listing
+#  id: UplinkSpaceFrontierMobSlimesPet
+#  name: Смайл
+#  productEntity: MobSlimesPet
+#  cost:
+#    StarToken: 35
+#  categories:
+#  - Friends
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMobHonkBot
+  name: Хонкбот
+  productEntity: MobHonkBot
+  cost:
+    StarToken: 45
+  categories:
+  - Friends
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMobCatSpace
+  name: Космическая кошка
+  productEntity: MobCatSpace
+  cost:
+    StarToken: 25
+  categories:
+  - Friends
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSpaceFrontierMobCockroach
+  name: Таракан
+  productEntity: MobCockroach
+  cost:
+    StarToken: 3
+  categories:
+  - Friends
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: UplinkSpaceFrontierMobMothroach
+  name: Таракан
+  productEntity: MobMothroach
+  cost:
+    StarToken: 3
+  categories:
+  - Friends
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2

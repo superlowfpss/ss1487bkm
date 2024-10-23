@@ -1,0 +1,48 @@
+- type: entity
+  name: пожарный топор атмос-техника
+  parent: [BaseItem, BaseEngineeringContraband]
+  id: AtmosAxe
+  description: Отличный топор, только как он поможет потушить пожар?!
+  components:
+  - type: Tag
+    tags:
+    - FireAxe
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: Sprite
+    sprite: _Custom/slfs/Objects/Tools/atmosaxe.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.95
+    damage:
+      types:
+        # axes are kinda like sharp hammers, you know?
+        Blunt: 3
+        Slash: 5
+        Structural: 15
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 7
+        Slash: 5
+        Structural: 45
+  - type: Item
+    size: Huge
+  - type: Tool
+    qualities:
+      - Prying
+      - AdvancedPrying # White Dream
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: StealTarget
+    stealGroup: FireAxe
+  - type: IgniteOnMeleeHit
+    fireStacks: -4

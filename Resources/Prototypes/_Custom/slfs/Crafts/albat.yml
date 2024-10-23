@@ -1,0 +1,47 @@
+- type: constructionGraph
+  id: AluminumBatCraft
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: incompleteIncompleteAluminumBat
+          steps:
+            - material: Steel
+              amount: 5
+              doAfter: 8
+            - material: MetalRod
+              amount: 1
+              doAfter: 2
+        
+    - node: incompleteIncompleteAluminumBat
+      entity: IncompleteAluminumBat
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 5
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: abat
+          steps:
+            - tool: Welding
+              doAfter: 10
+        
+    - node: abat
+      entity: AluminumBat
+
+- type: construction
+  name: Aluminum bat
+  id: AluminumBatCraft
+  graph: AluminumBatCraft
+  startNode: start
+  targetNode: abat
+  category: construction-category-weapons
+  objectType: Item
+  description: Aluminum bat! A lightweight and durable tool to protect against your ill-wishers.
+  icon:
+    sprite: _Custom/slfs/Objects/Weapons/albat.rsi
+    state: icon

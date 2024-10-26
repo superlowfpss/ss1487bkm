@@ -72,6 +72,9 @@
 
 - Flags: MAPPING
   Commands:
+  - mapping
+  - toggleautosave
+  - toggledecals
   - addmap
   - loadgrid
   - loadmap

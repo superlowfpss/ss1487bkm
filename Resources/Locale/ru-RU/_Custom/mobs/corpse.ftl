@@ -1,0 +1,10 @@
+ent-MobRandomCapCorpseW = { ent-SalvageHumanCorpse }
+    .desc = { ent-SalvageHumanCorpse.desc }
+ent-MobRandomSecurityCorpseW = { ent-SalvageHumanCorpse }
+    .desc = { ent-SalvageHumanCorpse.desc }
+ent-MobRandomMedicCorpseW = { ent-SalvageHumanCorpse }
+    .desc = { ent-SalvageHumanCorpse.desc }
+ent-MobRandomCargoCorpseW = { ent-SalvageHumanCorpse }
+    .desc = { ent-SalvageHumanCorpse.desc }
+ent-MobRandomEngineerCorpseW = { ent-SalvageHumanCorpse }
+    .desc = { ent-SalvageHumanCorpse.desc }

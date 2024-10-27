@@ -1,0 +1,95 @@
+- type: startingGear
+  id: CargoTechGearCorpse
+  equipment:
+    head: ClothingHeadHatCargosoft
+    jumpsuit: ClothingUniformJumpsuitCargo
+    shoes: ClothingShoesColorBlack
+    pocket1: SurvivalKnife
+    pocket2: FlashlightLantern
+#  innerClothingSkirt: ClothingUniformJumpskirtCargo
+
+- type: startingGear
+  id: DoctorGearCorpse
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    belt: ClothingBeltMedicalFilled
+    pocket1: FlashlightLantern
+    pocket2: ScalpelCool
+  #innerClothingSkirt: ClothingUniformJumpskirtMedicalDoctor
+
+- type: startingGear
+  id: SecurityOfficerGearCorpse
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    shoes: ClothingShoesBootsJack
+    outerClothing: ClothingOuterVestArmorSec
+    belt: ClothingBeltSecurityFilled
+    pocket1: FlashlightSeclite
+    pocket2: CombatKnife
+
+- type: startingGear
+  id: CaptainGearCorpse
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCaptain
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+    outerClothing: ClothingOuterArmorCaptainCarapace 
+
+- type: startingGear
+  id: StationEngineerGearCorpse
+  equipment:
+    head: ClothingHeadHatHardhatYellow
+    jumpsuit: ClothingUniformJumpsuitEngineering
+    shoes: ClothingShoesBootsWork
+    outerClothing: ClothingOuterVestHazard
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityFilled
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomEngineerCorpseW
+  suffix: Инженер
+  components:
+  - type: Loadout
+    prototypes:
+    - StationEngineerGearCorpse
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCargoCorpseW
+  suffix: Грузчик
+  components:
+  - type: Loadout
+    prototypes:
+    - CargoTechGearCorpse
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomMedicCorpseW
+  suffix: Медик
+  components:
+  - type: Loadout
+    prototypes:
+    - DoctorGearCorpse
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomSecurityCorpseW
+  suffix: Офицер СБ
+  components:
+  - type: Loadout
+    prototypes:
+    - SecurityOfficerGearCorpse
+
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCapCorpseW
+  suffix: Кэп
+  components:
+  - type: Loadout
+    prototypes:
+    - CaptainGearCorpse

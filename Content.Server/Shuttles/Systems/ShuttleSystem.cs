@@ -60,7 +60,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     private EntityQuery<MapGridComponent> _gridQuery;
 
-    public const float TileMassMultiplier = 0.5f;
+    public const float TileMassMultiplier = 0.1f;
 
     public override void Initialize()
     {

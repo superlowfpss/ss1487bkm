@@ -617,7 +617,7 @@ public sealed partial class ShuttleSystem
         if (!TryComp<MapGridComponent>(uid, out var grid))
             return 4f;
 
-        return MathF.Max(grid.LocalAABB.Width, grid.LocalAABB.Height) + 12.5f;
+        return MathF.Max(grid.LocalAABB.Width, grid.LocalAABB.Height) + 80.5f;
     }
 
     /// <summary>

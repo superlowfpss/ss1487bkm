@@ -2,7 +2,6 @@
   name: СтарТокен
   parent: BaseItem
   id: StarToken
-  categories: [ HideSpawnMenu ]
   suffix: 20 ST
   description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
   components:
@@ -14,7 +13,7 @@
     size: Tiny
   - type: Stack
     count: 20
-    stackType: StarToken
+    stackType: Telecrystal
   - type: StaticPrice
     price: 0
   - type: StackPrice
@@ -52,16 +51,6 @@
   components:
   - type: Stack
     count: 10
-
-- type: entity
-  parent: StarToken
-  id: StarToken20
-  suffix: 20 ST
-  name: СтарТокен
-  description: Удивительная монета для покупки разных штучек в магазине Космичекого рубежа.
-  components:
-  - type: Stack
-    count: 20
 
 - type: entity
   parent: StarToken

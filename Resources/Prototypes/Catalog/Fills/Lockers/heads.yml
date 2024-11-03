@@ -240,6 +240,7 @@
     - id: ClothingHeadCage # backmen
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: FlatpackMetempsychoticMachine # backmen
+    - id: MedicalBiofabMachineBoard # backmen
     - id: MedTekCartridge
 
 # Hardsuit table, used for suit storage as well

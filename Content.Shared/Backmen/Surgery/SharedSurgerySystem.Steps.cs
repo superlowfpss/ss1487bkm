@@ -15,6 +15,7 @@ using Robust.Shared.Prototypes;
 using System.Linq;
 using Content.Shared.Backmen.Surgery.Steps;
 using Content.Shared.Backmen.Surgery.Tools;
+using Content.Shared.Containers.ItemSlots;
 
 namespace Content.Shared.Backmen.Surgery;
 
@@ -214,14 +215,6 @@ public abstract partial class SharedSurgerySystem
 
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, adjustedDamage, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
-
-        if (ent.Comp.IsAutoRepeatable)
-        {
-            var stepProto = GetProtoId(ent);
-            var surgeryProto = GetProtoId(args.Surgery);
-            if (stepProto != null && surgeryProto != null)
-                CheckAndStartStep(args.User, args.Body, args.Part, ent, args.Surgery, stepProto.Value, surgeryProto.Value);
-        }
     }
 
     private void OnTendWoundsCheck(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
@@ -275,11 +268,14 @@ public abstract partial class SharedSurgerySystem
 
     private void OnCavityCheck(Entity<SurgeryStepCavityEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
     {
+        // Normally this check would simply be partComp.ItemInsertionSlot.HasItem, but as mentioned before,
+        // For whatever reason it's not instantiating the field on the clientside after the wizmerge.
         if (!TryComp(args.Part, out BodyPartComponent? partComp)
+            || !TryComp(args.Part, out ItemSlotsComponent? itemComp)
             || ent.Comp.Action == "Insert"
-            && !partComp.ItemInsertionSlot.HasItem
+            && !itemComp.Slots[partComp.ContainerName].HasItem
             || ent.Comp.Action == "Remove"
-            && partComp.ItemInsertionSlot.HasItem)
+            && itemComp.Slots[partComp.ContainerName].HasItem)
             args.Cancelled = true;
     }
 
@@ -299,6 +295,7 @@ public abstract partial class SharedSurgerySystem
                     : removedComp.Part.ToString().ToLower();
                 _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, out var _);
                 _body.AttachPart(args.Part, slotName, tool);
+                _body.ChangeSlotState((tool, partComp), false);
             }
         }
     }
@@ -407,44 +404,6 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    // Small duplicate for OnSurgeryTargetStepChosen, allows for continuously looping a given step.
-    private void CheckAndStartStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid surgery,
-        EntProtoId stepProto, EntProtoId surgeryProto)
-    {
-        if (!CanPerformStep(user, body, part, step, true, out _, out _, out var validTools))
-            return;
-
-        if (_net.IsServer && validTools?.Count > 0)
-        {
-            foreach (var tool in validTools)
-            {
-                if (TryComp(tool, out SurgeryToolComponent? toolComp) &&
-                    toolComp.EndSound != null)
-                {
-                    _audio.PlayEntity(toolComp.StartSound, user, tool);
-                }
-            }
-        }
-
-        if (TryComp(body, out TransformComponent? xform))
-            _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
-
-        var ev = new SurgeryDoAfterEvent(surgeryProto, stepProto);
-        // TODO: Make this serialized on a per surgery step basis, and also add penalties based on ghetto tools.
-        var duration = 2f;
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            duration = duration / surgerySpeedMod.SpeedModifier;
-
-        var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
-        {
-            BreakOnMove = true,
-            BreakOnHandChange = true,
-            BreakOnDamage = true,
-            BreakOnDropItem = true,
-        };
-        _doAfter.TryStartDoAfter(doAfter);
-    }
-
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
     {
         var user = args.Actor;
@@ -487,10 +446,12 @@ public abstract partial class SharedSurgerySystem
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
             BreakOnMove = true,
+            CancelDuplicate = true,
+            DuplicateCondition = DuplicateConditions.SameEvent,
+            NeedHand = true,
             BreakOnHandChange = true,
-            BreakOnDamage = true,
-            BreakOnDropItem = true,
         };
+
         _doAfter.TryStartDoAfter(doAfter);
     }
 

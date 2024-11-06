@@ -70,14 +70,14 @@
 # 3 Tier
 - type: entity
   parent: BaseSFSponsorUplink
-  id: SFSponsorUplink100
+  id: SFSponsorUplink120
   name: портативный магазин Космического Рубежа
   description: Удивительный магазинчик в форме ракеты для покупки разных штучек.
-  suffix: 100
+  suffix: 120
   components:
   - type: Store
     balance:
-      StarToken: 100
+      StarToken: 120
 
 # Debug
 - type: entity

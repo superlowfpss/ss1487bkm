@@ -1,6 +1,8 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared.Body.Part;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Medical.Components;
 using Content.Server.Popups;
 using Content.Server.Stack;
@@ -10,7 +12,6 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
-using Content.Shared.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
@@ -25,7 +26,6 @@ using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Shared.Body.Part;
 
 namespace Content.Server.Medical;
 
@@ -91,26 +91,22 @@ public sealed class HealingSystem : EntitySystem
         if (healed == null && healing.BloodlossModifier != 0)
             return;
 
+        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
+
         /* This is rather shitcodey. Problem is that right now damage is coupled to integrity.
            If the body is fully healed, all of the checks on TryChangeDamage stop us from actually healing.
            So in this case we add a special check to heal anyway if TryChangeDamage returns null.
         */
-        if (healed != null && healed.GetTotal() == 0)
+        if (total == 0)
         {
-            if (TryComp<TargetingComponent>(args.User, out var user)
-                && TryComp<TargetingComponent>(args.Target, out var target)
-                && healing.Damage.GetTotal() < 0)
-            {
-                // If they are valid, we check for body part presence,
-                // and integrity, then apply a direct integrity change.
-                var (type, symmetry) = _bodySystem.ConvertTargetBodyPart(user.Target);
-                if (_bodySystem.GetBodyChildrenOfType(args.Target.Value, type, symmetry: symmetry).FirstOrDefault() is { } bodyPart
-                    && bodyPart.Component.Integrity < BodyPartComponent.MaxIntegrity)
-                    _bodySystem.TryChangeIntegrity(bodyPart, healing.Damage.GetTotal().Float(), false, target.Target, out var _);
-            }
-        }
+            var parts = _bodySystem.GetBodyChildren(args.Target).ToList();
+            // We fetch the most damaged body part
+            var mostDamaged = parts.MinBy(x => x.Component.Integrity);
+            var targetBodyPart = _bodySystem.GetTargetBodyPart(mostDamaged);
 
-        var total = healed?.GetTotal() ?? FixedPoint2.Zero;
+            if (targetBodyPart != null)
+                _bodySystem.TryChangeIntegrity(mostDamaged, healing.Damage.GetTotal().Float(), false, targetBodyPart.Value, out _);
+        }
 
         // Re-verify that we can heal the damage.
 

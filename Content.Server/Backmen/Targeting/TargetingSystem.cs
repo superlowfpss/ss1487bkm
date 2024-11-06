@@ -1,14 +1,10 @@
+using Content.Shared.Backmen.Targeting;
 using Content.Shared.Body.Systems;
 using Content.Shared.Mobs;
-using Content.Shared.Targeting;
-using Content.Shared.Targeting.Events;
-using Robust.Server.Audio;
-using Robust.Shared.Audio;
 
-namespace Content.Server.Targeting;
+namespace Content.Server.Backmen.Targeting;
 public sealed class TargetingSystem : SharedTargetingSystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
     public override void Initialize()
@@ -23,8 +19,6 @@ public sealed class TargetingSystem : SharedTargetingSystem
         if (!TryComp<TargetingComponent>(GetEntity(message.Uid), out var target))
             return;
 
-        // Todo, get a better sound for this shit.
-        //_audio.PlayGlobal(target.SwapSound, args.SenderSession, AudioParams.Default.WithVolume(-8f));
         target.Target = message.BodyPart;
         Dirty(GetEntity(message.Uid), target);
     }

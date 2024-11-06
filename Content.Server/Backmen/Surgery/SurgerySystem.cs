@@ -11,14 +11,16 @@ using Content.Shared.Medical.Surgery.Effects.Step;
 using Content.Server.Atmos.Rotting;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
-//using Content.Shared.Medical.Wounds;
 using Content.Shared.Prototypes;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Backmen.Surgery;
 using Content.Shared.Backmen.Surgery.Tools;
+using Content.Shared.Medical.Surgery;
+using Robust.Shared.Player;
 
 namespace Content.Server.Backmen.Surgery;
 
@@ -26,14 +28,13 @@ public sealed class SurgerySystem : SharedSurgerySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-
+    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly RottingSystem _rot = default!;
     [Dependency] private readonly BlindableSystem _blindableSystem = default!;
-    //[Dependency] private readonly WoundsSystem _wounds = default!;
 
     private readonly List<EntProtoId> _surgeries = new();
 
@@ -76,10 +77,25 @@ public sealed class SurgerySystem : SharedSurgerySystem
         }
         Log.Debug($"Setting UI state with {surgeries}, {body} and {SurgeryUIKey.Key}");
         _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState(surgeries));
+        /*
+            Reason we do this is because when applying a BUI State, it rolls back the state on the entity temporarily,
+            which just so happens to occur right as we're checking for step completion, so we end up with the UI
+            not updating at all until you change tools or reopen the window.
+        */
+
+        var actors = _ui.GetActors(body, SurgeryUIKey.Key).ToArray();
+        if (actors.Length == 0)
+            return;
+
+        var filter = Filter.Entities(actors);
+        RaiseNetworkEvent(new SurgeryUiRefreshEvent(GetNetEntity(body)), filter);
     }
 
-    private void SetDamage(EntityUid body, DamageSpecifier damage, float partMultiplier,
-        EntityUid user, EntityUid part)
+    private void SetDamage(EntityUid body,
+        DamageSpecifier damage,
+        float partMultiplier,
+        EntityUid user,
+        EntityUid part)
     {
         var changed = _damageableSystem.TryChangeDamage(body, damage, true, origin: user, canSever: false, partMultiplier: partMultiplier);
         if (changed != null
@@ -99,17 +115,18 @@ public sealed class SurgerySystem : SharedSurgerySystem
             || !args.CanReach
             || args.Target == null
             || !TryComp<SurgeryTargetComponent>(args.User, out var surgery)
-            || !surgery.CanOperate)
+            || !surgery.CanOperate
+            || !IsLyingDown(args.Target.Value, args.User))
         {
             return;
         }
-        /* lmao bet
-        if (user == args.Target)
+
+        if (user == args.Target && !_config.GetCVar(Shared.Backmen.CCVar.CCVars.CanOperateOnSelf))
         {
-            _popup.PopupEntity("You can't perform surgery on yourself!", user, user);
+            _popup.PopupEntity(Loc.GetString("surgery-error-self-surgery"), user, user);
             return;
-        }*/
-        Log.Debug("OnToolAfterInteract passed, opening UI");
+        }
+
         args.Handled = true;
         _ui.OpenUi(args.Target.Value, SurgeryUIKey.Key, user);
         Log.Debug("UI opened");

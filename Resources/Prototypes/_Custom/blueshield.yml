@@ -73,8 +73,7 @@
   - type: Sprite
     sprite: _Custom/ID.rsi
     layers:
-    - state: silver
-    - state: idblueshield
+    - state: shield
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard

@@ -20,7 +20,6 @@
   files:
     - /Audio/Voice/Human/womangiggle1.ogg
     - /Audio/Voice/Human/womangiggle2.ogg
-    - /Audio/Voice/Human/womangiggle3.ogg
 
 - type: soundCollection
   id: MaleCough

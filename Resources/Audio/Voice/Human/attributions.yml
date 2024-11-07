@@ -82,6 +82,13 @@
   copyright: "Baystation12"
   source: "https://github.com/infinitystation/Baystation12/commit/e9a0a51727ad21d6bf53962386e600090350b7f1"
 
+- files:
+  - femalegiggle1.ogg
+  - femalegiggle2.ogg
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from WyccStation (SS220)"
+  source: "https://github.com/ss220club/Paradise-SS220"
+
 - files: ["female_cough_1.ogg"]
   license: "CC0-1.0"
   copyright: "Ashe Kirk"

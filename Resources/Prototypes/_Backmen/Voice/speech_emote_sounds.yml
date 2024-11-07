@@ -8,6 +8,8 @@
       collection: FelinidScreams
     Laugh:
       collection: MaleLaugh
+    Giggle:
+      collection: MaleGiggle
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -36,6 +38,8 @@
       collection: FelinidScreams
     Laugh:
       collection: FemaleLaugh
+    Giggle:
+      collection: FemaleGiggle
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -65,6 +69,8 @@
       collection: HarpyScreams
     Laugh:
       collection: HarpyLaugh
+    Giggle:
+      collection: HarpyGiggle
     Sneeze:
       collection: MaleSneezes
     Cough:

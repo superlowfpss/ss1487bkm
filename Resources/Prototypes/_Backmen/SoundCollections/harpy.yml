@@ -34,6 +34,14 @@
     - /Audio/Voice/Moth/moth_laugh.ogg
 
 - type: soundCollection
+  id: HarpyGiggle
+  files:
+    - /Audio/Voice/Human/mangiggle1.ogg
+    - /Audio/Voice/Human/mangiggle2.ogg
+    - /Audio/Voice/Human/womangiggle1.ogg
+    - /Audio/Voice/Human/womangiggle2.ogg
+
+- type: soundCollection
   id: HarpyHisses
   files:
     - /Audio/Nyanotrasen/Voice/Felinid/cat_hiss1.ogg

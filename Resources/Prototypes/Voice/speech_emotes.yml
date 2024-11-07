@@ -57,6 +57,25 @@
     - laughs
     - laughing
     - laughed
+    # Corvax-Localization-Start
+    - смеется
+    - смеётся
+    - ржёт
+    # Corvax-Localization-End
+
+- type: emote
+  id: Giggle
+  name: chat-emote-name-giggle
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-giggle"]
+  chatTriggers:
     - chuckle
     - chuckles
     - chuckled
@@ -69,13 +88,10 @@
     - chortles
     - chortling
     # Corvax-Localization-Start
-    - смеется
-    - смеётся
     - хохочет
     - хихикает
     - хихикнул
     - хихикнула
-    - ржёт
     # Corvax-Localization-End
 
 - type: emote

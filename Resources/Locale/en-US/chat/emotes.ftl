@@ -1,6 +1,7 @@
 # Names
 chat-emote-name-scream = Scream
 chat-emote-name-laugh = Laugh
+chat-emote-name-giggle = Giggle
 chat-emote-name-honk = Honk
 chat-emote-name-sigh = Sigh
 chat-emote-name-whistle = Whistle
@@ -34,6 +35,7 @@ chat-emote-name-snore = Snore
 # Message
 chat-emote-msg-scream = screams!
 chat-emote-msg-laugh = laughs.
+chat-emote-name-giggle = giggles.
 chat-emote-msg-honk = honks.
 chat-emote-msg-sigh = sighs.
 chat-emote-msg-whistle = whistles.

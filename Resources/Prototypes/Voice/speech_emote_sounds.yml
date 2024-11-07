@@ -8,6 +8,8 @@
       collection: MaleScreams
     Laugh:
       collection: MaleLaugh
+    Giggle:
+      collection: MaleGiggle
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -48,6 +50,8 @@
       collection: FemaleScreams
     Laugh:
       collection: FemaleLaugh
+    Giggle:
+      collection: FemaleGiggle
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -88,6 +92,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    Giggle:
+      path: /Audio/Animals/lizard_happy.ogg
     Honk:
       collection: BikeHorn
     Whistle:
@@ -109,6 +115,8 @@
     Scream:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
+      path: /Audio/Animals/lizard_happy.ogg
+    Giggle:
       path: /Audio/Animals/lizard_happy.ogg
     Honk:
       collection: BikeHorn
@@ -132,6 +140,8 @@
       collection: MaleScreams
     Laugh:
       collection: MaleLaugh
+    Giggle:
+      collection: MaleGiggle
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -174,6 +184,8 @@
       collection: FemaleScreams
     Laugh:
       collection: FemaleLaugh
+    Giggle:
+      collection: FemaleGiggle
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -214,6 +226,8 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
+    Giggle:
+      path: /Audio/Voice/Vox/vox_laugh.ogg
   params:
     variation: 0.125
     # We need vox sounds for the other emotes
@@ -224,6 +238,8 @@
     Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
     Laugh:
+      collection: DionaLaugh
+    Giggle:
       collection: DionaLaugh
     Honk:
       collection: BikeHorn
@@ -245,6 +261,8 @@
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
       path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+    Giggle:
+      path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
@@ -263,6 +281,8 @@
       collection: MaleScreams
     Laugh:
       collection: MaleLaugh
+    Giggle:
+      collection: MaleGiggle
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -304,6 +324,8 @@
       collection: FemaleScreams
     Laugh:
       collection: FemaleLaugh
+    Giggle:
+      collection: FemaleGiggle
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -348,6 +370,8 @@
     Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
     Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Giggle:
       path: /Audio/Voice/Moth/moth_laugh.ogg
     Chitter:
       path: /Audio/Voice/Moth/moth_chitter.ogg

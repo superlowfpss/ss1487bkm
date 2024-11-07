@@ -32,6 +32,15 @@
     - /Audio/Animals/lizard_happy.ogg
     - /Audio/Animals/ferret_happy.ogg
     - /Audio/Voice/Moth/moth_laugh.ogg
+    
+- type: soundCollection
+  id: HarpyGiggle
+  files:
+    - /Audio/Voice/Human/mangiggle1.ogg
+    - /Audio/Voice/Human/mangiggle2.ogg
+    - /Audio/Voice/Human/womangiggle1.ogg
+    - /Audio/Voice/Human/womangiggle2.ogg
+    - /Audio/Voice/Human/womangiggle3.ogg
 
 - type: soundCollection
   id: HarpyHisses

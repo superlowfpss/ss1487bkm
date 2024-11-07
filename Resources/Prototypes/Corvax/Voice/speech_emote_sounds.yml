@@ -8,6 +8,8 @@
       collection: MaleScreams
     Laugh:
       collection: MaleLaugh
+    Giggle:
+      collection: MaleGiggle
     Growl:
       collection: Growl
     Howl:
@@ -42,6 +44,8 @@
       collection: FemaleScreams
     Laugh:
       collection: FemaleLaugh
+    Giggle:
+      collection: FemaleGiggle
     Growl:
       collection: Growl
     Howl:

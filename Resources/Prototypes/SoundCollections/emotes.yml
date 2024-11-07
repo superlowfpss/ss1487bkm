@@ -10,6 +10,19 @@
     - /Audio/Voice/Human/womanlaugh.ogg
 
 - type: soundCollection
+  id: MaleGiggle
+  files:
+    - /Audio/Voice/Human/mangiggle1.ogg
+    - /Audio/Voice/Human/mangiggle2.ogg
+
+- type: soundCollection
+  id: FemaleGiggle
+  files:
+    - /Audio/Voice/Human/womangiggle1.ogg
+    - /Audio/Voice/Human/womangiggle2.ogg
+    - /Audio/Voice/Human/womangiggle3.ogg
+
+- type: soundCollection
   id: MaleCough
   files:
     - /Audio/Voice/Human/male_cough_1.ogg

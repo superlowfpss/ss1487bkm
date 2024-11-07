@@ -70,6 +70,18 @@
   copyright: "/tg/station"
   source: "https://github.com/tgstation/tgstation/commit/3d049e69fe71a0be2133005e65ea469135d648c8"
 
+- files:
+  - mangiggle1.ogg
+  - mangiggle2.ogg
+  license: "CC-BY-SA-3.0"
+  copyright: "Baystation12"
+  source: "https://github.com/infinitystation/Baystation12/commit/ae20920e07429adba4ec047dae76e1139e401fb8"
+
+- files: ["femalegiggle3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Baystation12"
+  source: "https://github.com/infinitystation/Baystation12/commit/e9a0a51727ad21d6bf53962386e600090350b7f1"
+
 - files: ["female_cough_1.ogg"]
   license: "CC0-1.0"
   copyright: "Ashe Kirk"

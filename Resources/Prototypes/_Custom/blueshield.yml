@@ -134,16 +134,57 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackBlueshield
-  name: Рюкзак офицера "Синий Щит"
-  description: Особенный рюкзак для элитного офицера "Синий Щит"! А стоп... он же пассажирский
+  name: рюкзак Офицера "Синий Щит"
+  description: Стандартный рюкзак Офицера "Синий Щит".
   components:
   - type: Sprite
-    sprite: _Custom/Backpacks/blueshield.rsi
+    sprite: _Custom/Clothing/Back/Backpacks/blueshield.rsi/
+#Вещмешок
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelBlueshield
+  name: вещмешок Офицера "Синий Щит"
+  description: Патронов много не бывает.
+  components:
+  - type: Sprite
+    sprite: _Custom/Clothing/Back/Duffels/blueshield.rsi/
+#Сумочка
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelBlueshield
+  name: сумка Офицера "Синий Щит"
+  description: Стандартная сумка Офицера "Синий Щит".
+  components:
+  - type: Sprite
+    sprite: _Custom/Clothing/Back/Satchels/blueshield.rsi/
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpackBlueshield
   id: ClothingBackpackBlueshieldFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelBlueshield
+  id: ClothingBackpackDuffelBlueshieldFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelBlueshield
+  id: ClothingBackpackSatchelBlueshieldFilled
+  suffix: Filled
   components:
   - type: StorageFill
     contents:

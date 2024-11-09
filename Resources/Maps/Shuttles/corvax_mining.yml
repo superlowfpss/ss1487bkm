@@ -241,6 +241,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: SalvageShuttle
 - proto: AirAlarm
   entities:
   - uid: 2
@@ -463,6 +464,11 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+  - uid: 126
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
 - proto: CableMV
   entities:
   - uid: 40
@@ -682,17 +688,22 @@ entities:
       - 2
 - proto: GeneratorRTG
   entities:
-  - uid: 70
+  - uid: 135
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
+  - uid: 136
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
 - proto: GravityGeneratorMini
   entities:
-  - uid: 126
+  - uid: 70
     components:
     - type: Transform
-      pos: 1.5,1.5
+      pos: -0.5,2.5
       parent: 1
 - proto: Grille
   entities:

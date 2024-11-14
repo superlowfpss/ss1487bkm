@@ -13,8 +13,10 @@ using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared.Backmen.Mood;
 using Content.Shared.Backmen.Surgery.Steps;
 using Content.Shared.Backmen.Surgery.Tools;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Containers.ItemSlots;
 
 namespace Content.Shared.Backmen.Surgery;
@@ -95,6 +97,9 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
+        if (!HasComp<ForcedSleepingComponent>(args.Body))
+            RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
+
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var gloves)
         || !_inventory.TryGetSlotEntity(args.User, "mask", out var mask))
         {
@@ -151,6 +156,19 @@ public abstract partial class SharedSurgerySystem
                 !HasComp<OperatingTableComponent>(buckle.BuckledTo))
             {
                 args.Invalid = StepInvalidReason.NeedsOperatingTable;
+                return;
+            }
+        }
+
+        if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
+        {
+            while (containerSlotEnumerator.MoveNext(out var containerSlot))
+            {
+                if (!containerSlot.ContainedEntity.HasValue)
+                    continue;
+
+                args.Invalid = StepInvalidReason.Armor;
+                args.Popup = Loc.GetString("surgery-ui-window-steps-error-armor");
                 return;
             }
         }
@@ -287,6 +305,8 @@ public abstract partial class SharedSurgerySystem
                 _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, out var _);
                 _body.AttachPart(args.Part, slotName, tool);
                 _body.ChangeSlotState((tool, partComp), false);
+                var ev = new BodyPartAttachedEvent((tool, partComp));
+                RaiseLocalEvent(args.Body, ref ev);
             }
         }
     }

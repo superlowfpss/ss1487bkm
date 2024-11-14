@@ -14,6 +14,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared.Backmen.Mood;
 
 namespace Content.Shared.Body.Systems;
 
@@ -171,14 +172,25 @@ public partial class SharedBodySystem
     protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
     {
         ChangeSlotState(partEnt, true);
-
+        // I don't know if this can cause issues, since any part that's being detached HAS to have a Body.
+        // though I really just want the compiler to shut the fuck up.
+        var body = partEnt.Comp.Body.GetValueOrDefault();
         // We then detach the part, which will kickstart EntRemovedFromContainer events.
         if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
         {
-            var ev = new BodyPartEnableChangedEvent(false);
-            RaiseLocalEvent(partEnt, ref ev);
+            var enableEvent = new BodyPartEnableChangedEvent(false);
+            RaiseLocalEvent(partEnt, ref enableEvent);
+
+            if (TryComp(body, out HumanoidAppearanceComponent? bodyAppearance)
+                && !HasComp<BodyPartAppearanceComponent>(partEnt)
+                && !TerminatingOrDeleted(body)
+                && !TerminatingOrDeleted(partEnt))
+                EnsureComp<BodyPartAppearanceComponent>(partEnt);
+
             SharedTransform.AttachToGridOrMap(partEnt, transform);
             _randomHelper.RandomOffset(partEnt, 0.5f);
+            var droppedEvent = new BodyPartDroppedEvent(partEnt);
+            RaiseLocalEvent(body, ref droppedEvent);
         }
 
     }
@@ -299,6 +311,7 @@ public partial class SharedBodySystem
         if (partEnt.Comp.PartType == BodyPartType.Leg)
         {
             AddLeg(partEnt, (partEnt.Comp.Body.Value, body));
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodRemoveEffectEvent("SurgeryNoLeg"));
         }
 
         if (partEnt.Comp.PartType == BodyPartType.Arm)
@@ -315,6 +328,13 @@ public partial class SharedBodySystem
         {
             var ev = new BodyPartEnabledEvent(partEnt);
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+            // Remove this effect only when we have full arm
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodRemoveEffectEvent("SurgeryNoHand"));
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Torso)
+        {
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodRemoveEffectEvent("SurgeryNoTorso"));
         }
     }
 
@@ -326,6 +346,7 @@ public partial class SharedBodySystem
         if (partEnt.Comp.PartType == BodyPartType.Leg)
         {
             RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body));
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodEffectEvent("SurgeryNoLeg"));
         }
 
         if (partEnt.Comp.PartType == BodyPartType.Arm)
@@ -335,6 +356,7 @@ public partial class SharedBodySystem
             {
                 var ev = new BodyPartDisabledEvent(hand);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+                RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodEffectEvent("SurgeryNoHand"));
             }
         }
 
@@ -342,6 +364,12 @@ public partial class SharedBodySystem
         {
             var ev = new BodyPartDisabledEvent(partEnt);
             RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodEffectEvent("SurgeryNoHand"));
+        }
+
+        if (partEnt.Comp.PartType == BodyPartType.Torso)
+        {
+            RaiseLocalEvent(partEnt.Comp.Body.Value, new MoodEffectEvent("SurgeryNoTorso"));
         }
     }
 
@@ -611,14 +639,10 @@ public partial class SharedBodySystem
 
         // start-backmen: surgery
         if (TryComp(part.Body, out HumanoidAppearanceComponent? bodyAppearance)
-            && !HasComp<BodyPartAppearanceComponent>(partId))
-        {
-            var appearance = AddComp<BodyPartAppearanceComponent>(partId);
-            appearance.OriginalBody = part.Body;
-            appearance.Color = bodyAppearance.SkinColor;
-            UpdateAppearance(partId, appearance);
-        }
-        // end-backmen: surgery
+            && !HasComp<BodyPartAppearanceComponent>(partId)
+            && !TerminatingOrDeleted(parentPartId)
+            && !TerminatingOrDeleted(partId)) // Saw some exceptions involving these due to the spawn menu.
+            EnsureComp<BodyPartAppearanceComponent>(partId);
 
         return Containers.Insert(partId, container);
     }

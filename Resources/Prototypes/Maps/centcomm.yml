@@ -12,14 +12,6 @@
           nameGenerator:
             !type:NanotrasenCentComNameGenerator
             prefixCreator: 'TG'
-        - type: StationJobs
-          availableJobs:
-            BKCCOperator: [ 0, 0]
-            BKCCSecGavna: [ 0, 0]
-            BKCCCargo: [ 0, 0]
-            BKCCSecOfficer: [ 0, 0]
-            BKCCAssistant: [ 0, 1]
-            BKCCAdmiral: [ 0, 0]
 
 - type: gameMap
   id: CentCommv2

@@ -1,0 +1,139 @@
+- type: entity
+  name: боевой гипоспрей
+  parent: BaseItem
+  description: Версия гипоспрея с увеличенным объёмом хранилища веществ.
+  id: CombatHypo
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/combat_hypo.rsi
+    state: combat_hypo
+  - type: Item
+    sprite: _Custom/Objects/Specific/Medical/combat_hypo.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 45
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+    onlyAffectsMobs: false
+  - type: UseDelay
+    delay: 1.0
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name: гипоспрей Центком
+  parent: BaseItem
+  description: В этом гипоспрее достоин содержаться только ихор.
+  id: CentcomHypo
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/centcom_hypo.rsi
+    state: centcom_hypo
+  - type: Item
+    sprite: _Custom/Objects/Specific/Medical/centcom_hypo.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 50
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+    onlyAffectsMobs: false
+  - type: UseDelay
+    delay: 0.5
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name: тактический гипоспрей
+  parent: BaseItem
+  description: Версия гипоспрея с уменьшенным объёмом хранилища веществ, но с более быстрым вводом.
+  id: TacticalHypo
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/tactical_hypo.rsi
+    state: tactical_hypo
+  - type: Item
+    sprite: _Custom/Objects/Specific/Medical/tactical_hypo.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 10
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+    onlyAffectsMobs: false
+  - type: UseDelay
+    delay: 0.3
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  name: многоразовый медипен
+  parent: BaseItem
+  description: В отличие от обычных медипенов, этот может использоваться многократно.
+  id: ChemicalMedipenReusable
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/refillable_medipen.rsi
+    state: firstaid
+  - type: Item
+    sprite: _Custom/Objects/Specific/Medical/refillable_medipen.rsi
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 15
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+    solutionName: hypospray
+    transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  - type: SpaceGarbage
+  - type: StaticPrice
+    price: 75 # These are limited supply items.
+  - type: TrashOnSolutionEmpty
+    solution: hypospray
+
+- type: entity
+  name: автоинъектор дезоксиэфедрина
+  parent: ChemicalMedipen
+  id: DesoxyephedrineAutoInjector
+  description: Экспресс-доза дезоксиэфедрина, предназначенная для применения в боевых условиях.
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/desoxypen.rsi
+    layers:
+    - state: desoxypen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: desoxypen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 10
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 10
+        reagents:
+        - ReagentId: Desoxyephedrine
+          Quantity: 10

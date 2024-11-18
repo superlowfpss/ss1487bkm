@@ -8,7 +8,6 @@
     sprite: _Custom/Objects/Specific/Medical/medipen.rsi
     layers:
     - state: firstaid
-      map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
     sprite: _Custom/Objects/Specific/Medical/medipen.rsi
     size: Tiny
@@ -25,11 +24,6 @@
     transferAmount: 15
     onlyAffectsMobs: false
     injectOnly: true
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    changeColor: false
-    emptySpriteName: firstaid_empty
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50

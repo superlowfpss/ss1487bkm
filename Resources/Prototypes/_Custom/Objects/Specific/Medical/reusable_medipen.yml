@@ -5,7 +5,7 @@
   id: ChemicalMedipenReusable
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/medipen.rsi
+    sprite: _Custom/Objects/Specific/Medical/medipen.rsi
     layers:
     - state: firstaid
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -14,23 +14,22 @@
     size: Tiny
   - type: SolutionContainerManager
     solutions:
-      pen:
+      hypospray:
         maxVol: 15
+  - type: RefillableSolution
+    solution: hypospray
   - type: ExaminableSolution
-    solution: pen
+    solution: hypospray
   - type: Hypospray
-    solutionName: pen
+    solutionName: hypospray
     transferAmount: 15
     onlyAffectsMobs: false
     injectOnly: true
   - type: Appearance
   - type: SolutionContainerVisuals
-#    maxFillLevels: 1
+    maxFillLevels: 1
     changeColor: false
     emptySpriteName: firstaid_empty
-  - type: Tag
-    tags:
-    - Trash
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50
@@ -38,4 +37,4 @@
   - type: StaticPrice
     price: 75 # These are limited supply items.
   - type: TrashOnSolutionEmpty
-    solution: pen
+    solution: hypospray

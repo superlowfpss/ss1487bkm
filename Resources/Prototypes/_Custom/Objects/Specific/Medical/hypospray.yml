@@ -109,3 +109,31 @@
     price: 75 # These are limited supply items.
   - type: TrashOnSolutionEmpty
     solution: hypospray
+
+- type: entity
+  name: автоинъектор дезоксиэфедрина
+  parent: ChemicalMedipen
+  id: DesoxyephedrineAutoInjector
+  description: Экспресс-доза дезоксиэфедрина, предназначенная для применения в боевых условиях.
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Specific/Medical/desoxypen.rsi
+    layers:
+    - state: desoxypen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: desoxypen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 10
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 10
+        reagents:
+        - ReagentId: Desoxyephedrine
+          Quantity: 10

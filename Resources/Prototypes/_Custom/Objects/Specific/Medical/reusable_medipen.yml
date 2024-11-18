@@ -1,13 +1,12 @@
 - type: entity
   name: многоразовый медипен
   parent: BaseItem
-  description: В отличие от обычных медипенов, может использоваться многократно.
+  description: В отличие от обычных медипенов, этот может использоваться многократно.
   id: ChemicalMedipenReusable
   components:
   - type: Sprite
     sprite: _Custom/Objects/Specific/Medical/medipen.rsi
-    layers:
-    - state: firstaid
+    state: firstaid
   - type: Item
     sprite: _Custom/Objects/Specific/Medical/medipen.rsi
     size: Tiny

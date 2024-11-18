@@ -95,7 +95,7 @@
     contents:
       - id: MedicatedSuture
       - id: RegenerativeMesh
-      - id: SyringeEphedrine
+      - id: DesoxyephedrineAutoInjector
       - id: SyringeSaline
       - id: BruteAutoInjector
       - id: BurnAutoInjector

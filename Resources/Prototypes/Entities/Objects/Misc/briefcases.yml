@@ -35,3 +35,27 @@
   components:
   - type: Item
     size: Huge
+
+- type: entity
+  parent: BriefcaseBase
+  id: BriefcaseBlack
+  name: презентабельный чемодан
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Briefcases/briefcase_black.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Storage/Briefcases/briefcase_black.rsi
+    size: Huge
+
+- type: entity
+  parent: BriefcaseBase
+  id: BriefcaseBlackAlt
+  name: презентабельный чемодан
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Briefcases/briefcase_black_alt.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Storage/Briefcases/briefcase_black_alt.rsi
+    size: Huge

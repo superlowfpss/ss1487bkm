@@ -42,7 +42,7 @@
   id: BSuplink
   name: Терминал снаряжения ОСЩ
   suffix: Космический Рубеж
-  description: Терминал который использует офицеры синего щита для покупки снаряжения.
+  description: Стандартный каталог снаряжения, выдаваемый офицерам подразделения "Синий Щит".
   components:
   - type: Item
     size: Small
@@ -201,7 +201,7 @@
 
 - type: listing
   id: GrenadeFlashBangShop
-  description: Стандартная светошумовая граната. Перед использованием стоит одеть экипировку с защитой от вспышек.
+  description: Стандартная светошумовая граната. Перед использованием стоит надеть экипировку с защитой от вспышек.
   productEntity: GrenadeFlashBang
   cost:
     ERTCrystal: 1
@@ -219,7 +219,7 @@
 
 - type: listing
   id: EmpGrenadeShop
-  description: Поможет остановить сломанного киборга.
+  description: Граната, при детонации которой происходит электромагнитный импульс. Может использоваться для вывода из строя энергетического оружия.
   productEntity: EmpGrenade
   cost:
     ERTCrystal: 2
@@ -331,7 +331,7 @@
 
 - type: listing
   id: MedkitCombatFilledShop
-  description: Аптечка необходимая для лечения боевых ранений.
+  description: Компактная аптечка, наполненная медикаментами для применения в боевых условиях.
   productEntity: MedkitCombatFilled
   cost:
     ERTCrystal: 4
@@ -340,7 +340,7 @@
 
 - type: listing
   id: OmnizineChemistryBottleShop
-  description: Химичское вещество позволяющее вылечить большинство повреждений.
+  description: Химическое вещество, позволяющее вылечить большинство повреждений.
   productEntity: OmnizineChemistryBottle
   cost:
     ERTCrystal: 6

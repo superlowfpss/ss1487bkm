@@ -339,6 +339,18 @@
   - BSnanit
 
 - type: listing
+  id: TacticalHypoShop
+  description: Гипоспрей уменьшенного объёма, изначально разработанный для бойцов подразделения "Синий Щит".
+  productEntity: TacticalHypo
+  cost:
+    ERTCrystal: 3
+  categories:
+  - BSnanit
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
   id: OmnizineChemistryBottleShop
   description: Химичское вещество позволяющее вылечить большинство повреждений.
   productEntity: OmnizineChemistryBottle

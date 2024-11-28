@@ -17,9 +17,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000
-    - !type:RoleTimeRequirement
-      role: JobCentralCommandAssistant
-      time: 3600
     job: BKCCSecOfficer
   - type: GhostRoleMobSpawner
     prototype: MobHumanCMBKCCSecOfficer

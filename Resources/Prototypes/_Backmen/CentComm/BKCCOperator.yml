@@ -14,9 +14,6 @@
     raffle:
       settings: short
     requirements:
-    - !type:RoleTimeRequirement
-      role: JobCentralCommandAssistant
-      time: 7200
     - !type:DepartmentTimeRequirement
       department: CentCom
       time: 14400

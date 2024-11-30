@@ -1,0 +1,61 @@
+- type: entity
+  name: M-28u
+  parent: BaseWeaponRifle
+  id: WeaponRifleM28U
+  suffix: Автомат
+  description: M-28u – это компактная версия автомата M28, оптимизированная для стрельбы 9-миллиметровыми патронами.
+  components:
+  - type: Sprite
+    sprite: _Custom/slfs/Weapons/m28u/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Custom/slfs/Weapons/m28u/tiny.rsi
+  - type: Item
+    sprite: _Custom/slfs/Weapons/m28u/tiny.rsi
+  - type: BkmGunWieldBonus
+    cameraRecoilScalar: -4
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: 0
+    angleIncrease: -6
+  - type: Gun
+    angleDecay: 50
+    angleIncrease: 9
+    cameraRecoilScalar: 5
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/m16.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns64/Rifles/m28_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns64/Rifles/m28_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m28_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.7

@@ -1,0 +1,56 @@
+- type: entity
+  parent: ClothingHeadHatCatEars
+  id: ClothingHeadHatRainbowCatEars
+  name: радужные кошачьи ушки
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
+  - type: Item
+    heldPrefix: rainbowcatears
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PointLight
+    energy: 0
+  - type: RgbLightController
+    layers: [ 0 ]
+
+
+- type: entity
+  parent: ClothingHeadHatDogEars
+  id: ClothingHeadHatRainbowDogEars
+  name: радужные собачьи ушки
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
+  - type: Item
+    heldPrefix: rainbowdogears
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PointLight
+    energy: 0
+  - type: RgbLightController
+    layers: [ 0 ]

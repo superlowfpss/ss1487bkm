@@ -135,6 +135,7 @@
   equipment:
     back: ClothingBackpackSatchelHolding
     id: AdminPDA
+    eyes: ClothingEyesHudMedSec
   storage:
     back:
     - GasAnalyzer

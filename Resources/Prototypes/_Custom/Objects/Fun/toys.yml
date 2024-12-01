@@ -1,0 +1,18 @@
+- type: entity
+  parent: BasePlushie
+  id: ChiefPlushie
+  name: Чиф
+  description: Лучший боец ДСО 3024 года.
+  components:
+  - type: Sprite
+    sprite: _Custom/Objects/Fun/toys.rsi
+    state: plushie_chief
+  - type: Speech
+    speechSounds: Pai # it just sounds better
+  - type: TTS
+  - type: SpeakOnUse
+    pack: FigurinesChief
+  - type: ItemSlots
+    slots:
+      stash:
+        startingItem: ClothingHeadHatCatEars

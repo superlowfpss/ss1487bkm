@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: FigurinesChief
+  values:
+    prefix: figurines-chief-
+    count: 11

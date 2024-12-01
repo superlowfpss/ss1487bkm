@@ -1,0 +1,11 @@
+figurines-chief-1 = Хай
+figurines-chief-2 = Позитивчик
+figurines-chief-3 = Негативчик
+figurines-chief-4 = Где Аарончик?
+figurines-chief-5 = *кричит!*
+figurines-chief-6 = Я не гей!
+figurines-chief-7 = Ммра Маммм!
+figurines-chief-8 = Аарамрра!
+figurines-chief-9 = Мрамор!
+figurines-chief-10 = Только не Браун!
+figurines-chief-11 = Емае

@@ -40,13 +40,24 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
+  parent: BaseWeaponSniper
   id: WeaponSniperMosin
+  suffix: Винтовка
   description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/mosin/big.rsi
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/mosin/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/mosin/tiny.rsi
+  - type: Gun
+    fireRate: 0.8
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.8
+  - type: GunRequiresWield
+  - type: Telescope # Ataraxia
 
 - type: entity
   name: Hristov

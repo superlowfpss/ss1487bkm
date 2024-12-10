@@ -10,8 +10,8 @@
 - type: playTimeTracker
   id: JobCentralCommandCargo
 
-- type: playTimeTracker
-  id: JobCentralCommandAssistant
+#- type: playTimeTracker
+#  id: JobCentralCommandAssistant
 
 - type: playTimeTracker
   id: JobBrigmedic

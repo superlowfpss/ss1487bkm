@@ -1,47 +1,47 @@
-- type: job
-  id: BKCCOfficial
-  name: job-name-centcomoffBK
-  description: job-description-centcomoffBK
-  playTimeTracker: JobCentralCommandOfficial
-  setPreference: true
-  startingGear: CentComCorvax
-  icon: JobIconNT
-  supervisors: job-supervisors-hoh
-  canBeAntag: false
-  weight: 1
-  requireAdminNotify: true
-  joinNotifyCrew: true
-  whitelisted: true
-  discordRequired: true
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: CentCom
-      time: 1
-  access:
-    - CCCargo
-    - CCSecurity
-    - CentralCommand
-    - CCOfficer
-  accessGroups:
-    - AllAccess
-  special:
-    - !type:AddImplantSpecial
-      implants: [ MindShieldImplant ]
-    - !type:AddComponentSpecial
-      components:
-        - type: SpecForce
-          actionBssActionName: ActionCentcomFtlAction
-        - type: NpcFactionMember
-          factions:
-            - CentralCommand
-        - type: Psionic
-        - type: DispelPower
-        - type: AntagImmune
-  minBankBalance: 400
-  maxBankBalance: 600
-  wageDepartment: CentCom
-  wage: 75
-
+#- type: job
+#  id: BKCCOfficial
+#  name: job-name-centcomoffBK
+#  description: job-description-centcomoffBK
+#  playTimeTracker: JobCentralCommandOfficial
+#  setPreference: true
+#  startingGear: CentComCorvax
+#  icon: JobIconNT
+#  supervisors: job-supervisors-hoh
+#  canBeAntag: false
+#  weight: 1
+#  requireAdminNotify: true
+#  joinNotifyCrew: true
+#  whitelisted: true
+#  discordRequired: true
+#  requirements:
+#    - !type:DepartmentTimeRequirement
+#      department: CentCom
+#      time: 1
+#  access:
+#    - CCCargo
+#    - CCSecurity
+#    - CentralCommand
+#    - CCOfficer
+#  accessGroups:
+#    - AllAccess
+#  special:
+#    - !type:AddImplantSpecial
+#      implants: [ MindShieldImplant ]
+#    - !type:AddComponentSpecial
+#      components:
+#        - type: SpecForce
+#          actionBssActionName: ActionCentcomFtlAction
+#        - type: NpcFactionMember
+#          factions:
+#            - CentralCommand
+#        - type: Psionic
+#        - type: DispelPower
+#        - type: AntagImmune
+#  minBankBalance: 400
+#  maxBankBalance: 600
+#  wageDepartment: CentCom
+#  wage: 75
+#
 - type: jobIcon
   parent: JobIcon
   id: JobIconNT

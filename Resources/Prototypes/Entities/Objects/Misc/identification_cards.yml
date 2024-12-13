@@ -24,6 +24,7 @@
     - WhitelistChameleon
   - type: StealTarget
     stealGroup: IDCard
+  - type: NanoChatCard # Corvax-Next-PDAChat
 
 #IDs with layers
 
@@ -833,4 +834,9 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
+<<<<<<< Updated upstream
     - Wizard
+=======
+  - type: NanoChatCard # Corvax-Next-PDAChat
+    notificationsMuted: true
+>>>>>>> Stashed changes
